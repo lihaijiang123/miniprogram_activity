@@ -1,0 +1,122 @@
+.top-box {
+	width: 100%;
+	height: 200rpx;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-color: #fff;
+	z-index: 3;
+}
+
+.ttt {
+	width: 100%;
+	height: 200rpx;
+	margin-bottom: 20rpx;
+}
+
+
+
+/* 筛选 */
+
+scroll-view {
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+scroll-view view {
+    margin-right: 20rpx;
+    font-size: 33rpx;
+    display: inline-block;
+    color: #bebebe;
+}
+
+scroll-view view:first-child {
+    margin-left: 30rpx;
+}
+
+scroll-view view.active {
+    font-size: 40rpx;
+    color: #333;
+    font-weight: bold;
+}
+
+/* swiper */
+
+swiper {
+    width: 650rpx;
+    height: 322rpx;
+    display: block;
+    margin: 0 auto 40rpx;
+    box-shadow: 0px 4rpx 20rpx 0px rgba(191, 191, 191, 1);
+}
+
+swiper image {
+    display: block;
+    border-radius: 10rpx;
+}
+
+.wx-swiper-dots {
+    position: relative;
+    left: unset !important;
+    right: 0;
+}
+
+.wx-swiper-dots.wx-swiper-dots-horizontal {
+    margin-bottom: -5rpx;
+}
+
+/* 热门活动 */
+
+.hot_activity .title {
+    display: block;
+    text-align: center;
+    font-size: 40rpx;
+    font-weight: bold;
+    color: rgb(171, 171, 171);
+    margin-bottom: 30rpx;
+}
+
+.hot_activity .content {
+    width: 686rpx;
+    margin: 0 auto;
+}
+
+.hot_activity .content .box {
+    width: 333rpx;
+	margin-right: 20rpx;
+	margin-bottom: 10rpx;
+}
+
+.hot_activity .content .box:nth-child(2n) {
+	margin-right: 0;
+}
+
+.hot_activity .content .box image {
+    width: 100%;
+    height: 240rpx;
+    margin-bottom: 5rpx;
+}
+
+.hot_activity .content .box .title {
+	padding: 0 5rpx;
+    font-weight: normal;
+    font-size: 30rpx;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	margin-bottom: 5rpx;
+}
+
+.hot_activity .content .box .money {
+	font-size: 30rpx;
+	color: rgb(139, 165, 118);
+}
+
+.no {
+	text-align: center;
+	font-size: 40rpx;
+	font-weight: bold;
+	color: #87CEFA;
+	margin: 40rpx auto;
+}

@@ -1,0 +1,193 @@
+
+.image {
+	width: 686rpx;
+	height: 400rpx;
+	display: block;
+	margin: 40rpx auto 0;
+	border-radius: 10rpx;
+	overflow: hidden;
+}
+
+.image image {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.title {
+	width: 686rpx;
+	margin: 30rpx auto;
+	font-size: 44rpx;
+	font-weight: bold;
+	line-height: 55rpx;
+}
+
+.p {
+	width: 686rpx;
+	margin: 0 auto 40rpx;
+	font-size: 30rpx;
+	color: #bfbfbf;
+}
+
+.money {
+	width: 686rpx;
+	margin: 0 auto 40rpx;
+	font-size: 40rpx;
+	font-weight: bold;
+	color: rgb(83, 186, 95);
+}
+
+.date_or_text {
+	width: 686rpx;
+	margin: 0 auto 10rpx;
+}
+
+.date_or_text image {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 20rpx;
+}
+
+.date_or_text text {
+	font-size: 30rpx;
+	display: inline-block;
+	vertical-align: middle;
+	color: #707070;
+}
+
+.top-box {
+	width: 100%;
+	padding-bottom: 40rpx;
+	border-bottom: 10rpx solid #eee;
+}
+
+.content {
+	width: 100%;
+}
+
+.content .subtit {
+	width: 100%;
+	display: block;
+	border-bottom: 5rpx solid #eee;
+	font-size: 35rpx;
+	line-height: 100rpx;
+	margin-top: 20rpx;
+}
+
+.content .subtit text {
+	width: 686rpx;
+	margin: 0 auto;
+	display: block;
+}
+
+.content .body {
+	width: 686rpx;
+	margin: 30rpx auto 0;
+	display: block;
+	font-size: 30rpx;
+	line-height: 40rpx;
+	color: #8a8a8a;
+}
+
+.content {
+	padding-bottom: 40rpx;
+}
+
+.bottom {
+	width: 100%;
+	padding: 10rpx 15rpx;
+	box-sizing: border-box;
+	background-color: #fff;
+	border-top: 2rpx solid #eee;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+}
+
+.bottom>.home {
+	width: 15%;
+	text-align: center;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+
+.bottom>.home text {
+	font-size: 30rpx;
+	display: block;
+	color: #8a8a8a;
+  line-height: 30rpx;
+
+}
+
+
+.bottom>button {
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	vertical-align: middle;
+	background-color: transparent;
+	font-weight: normal;
+}
+
+.bottom-box {
+	width: 100%;
+	height: 120rpx;
+}
+
+.baoming {
+	width: 40%;
+	height: 80rpx;
+	background-color: #87CEFA;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	line-height: 80rpx;
+	font-size: 30rpx;
+	border-radius: 50rpx;
+	margin-left: 15%;
+	color: #fff;
+}
+
+.bottom .home .on {
+	color: #87CEFA;
+}
+
+.neirong {
+	line-height: 60rpx;
+}
+
+.neirong image {
+	width: 100%;
+	display: block;
+}
+
+.label {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 20rpx;
+	height: 70rpx;
+}
+
+.label text {
+	display: inline-block;
+	height: 50rpx;
+	line-height: 50rpx;
+	border: 2rpx solid #87CEFA;
+	margin-top: 20rpx;
+	margin-left: 20rpx;
+	font-size: 30rpx;
+	color: #87CEFA;
+	padding: 0 20rpx;
+	border-radius: 10rpx;
+}
+
+.copy {
+	margin-left: 10rpx;
+	width: 30rpx;
+	height: 30rpx;
+}
+
+.w100 {
+	width: 100%;
+}

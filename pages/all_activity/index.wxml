@@ -1,0 +1,77 @@
+<view class="top-box">
+  <!-- 地区选择 && 搜索框 S -->
+  <view class="search-box clearfix">
+    <view class="fl" bindtap="goCity">
+      <image src="../../images/icon/wz.png"></image>
+      <text>{{location}}</text>
+    </view>
+
+    <view class="fr" bindtap="goSearch">
+      <image src="../../images/icon/search.png"></image>
+      <text>搜索更多活动</text>
+    </view>
+  </view>
+  <!-- 地区选择 && 搜索框 E -->
+
+  <!-- 筛选 S -->
+  <scroll-view scroll-x="true" style="white-space: nowrap; display:flex;" catchtouchmove='true'>
+    <view wx:for="{{ list_data.active_types }}" class="{{ tab_active == item.id ? 'active' : '' }}" wx:key="index" bindtap="setTabIndex" data-index="{{ item.id }}">{{ item.title }}</view>
+  </scroll-view>
+  <!-- 筛选 E -->
+
+  <!-- 下拉 筛选 S -->
+  <!-- <view class="goDown">
+		<view class="item" catchtap="clickHandler" data-index="1">
+			{{ sj || '时间排序' }}
+			<image src="../../images/icon/down.png"></image>
+		</view>
+		<view class="item" catchtap="clickHandler" data-index="2">
+			{{ cs || '举办场所' }}
+			<image src="../../images/icon/down.png"></image>
+		</view>
+
+		<view class="options" wx:if="{{ options_index == 1 }}" catchtouchmove='true'>
+			<view class="{{ begin_time__desc == '0' ? 'active' : '' }}" catchtap="clickShJi" data-index="0">不限</view>
+			<view class="{{ begin_time__desc == 'begin_time__asc' ? 'active' : '' }}" catchtap="clickShJi" data-index="begin_time__asc">升序</view>
+			<view class="{{ begin_time__desc == 'begin_time__desc' ? 'active' : '' }}" catchtap="clickShJi" data-index="begin_time__desc">降序</view>
+		</view>
+
+		<view class="options" wx:if="{{ options_index == 2 }}" catchtouchmove='true'>
+			<view class="{{ hold_mode == 0 ? 'active' : '' }}" catchtap="clickXsX" data-index="0" >不限</view>
+			<view class="{{ hold_mode == 1 ? 'active' : '' }}" catchtap="clickXsX" data-index="1" >线上</view>
+			<view class="{{ hold_mode == 2 ? 'active' : '' }}" catchtap="clickXsX" data-index="2" >线下</view>
+		</view>
+	</view> -->
+  <!-- 下拉 筛选 E -->
+</view>
+<view class="ttt"></view>
+<!-- <view class="back" catchtap="delHandler" wx:if="{{ is_options }}" catchtouchmove='true'></view> -->
+
+<!-- 产品 S -->
+<view class="pro" wx:if="{{ !no }}">
+  <view class="product-box clearfix" wx:for="{{ list_data.active_list }}" wx:key="index" bindtap="goDetail" data-id="{{ item.id }}">
+    <view class="product-imgbox">
+      <image mode="aspectFill" src="{{ item.pic }}"></image>
+      <text class="money" wx:if="{{ item.pay_mode == 1 }}">收费</text>
+      <text class="money" wx:if="{{ item.pay_mode == 2 }}">免费</text>
+    </view>
+    <view class="product-contentbox">
+      <text class="title">{{ item.title }}</text>
+      <view class="diqu">
+        <image src="../../images/icon/wz.png"></image>
+        <text wx:if="{{ item.hold_mode == 1 }}">线上</text>
+        <text wx:if="{{ item.hold_mode == 2 }}">{{ item.city }}  {{ item.address }}</text>
+      </view>
+      <view class="diqu">
+        <image class="time" src="../../images/icon/date.png"></image>
+        <text>{{ item.begin_time }}</text>
+      </view>
+      <view class="label">
+        <text>{{ item.serve_category_id }}</text>
+        <text wx:for="{{ item.serve_type }}" wx:key="index">{{ item }}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="no" wx:if="{{ no }}">没有符此条件的活动</view>
+<!-- 产品 E -->

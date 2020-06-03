@@ -1,0 +1,43 @@
+<view class="bgcs">
+    <!-- <image src="{{static}}/static/wximage/background.png"></image> -->
+</view>
+
+<view class="mybtm">
+    <view class="userinfo" wx:if="{{ !userInfo }}">
+        <button open-type='getUserInfo' bindgetuserinfo="onGotUserInfo">
+			<view class="userinfo-avatar">
+				<!-- <image src="{{ userInfo.avatarUrl }}"></image> -->
+				<!-- <open-data type="userAvatarUrl"></open-data> -->
+			</view>
+			<view style="color: #fff;">点击登录</view>
+			<!-- <view>{{ userInfo.nickName }}</view> -->
+			<!-- <open-data type="userNickName" style="font-size:38rpx;"></open-data> -->
+		</button>
+    </view>
+	<view class="userinfo" wx:if="{{ userInfo }}">
+		<view class="userinfo-avatar">
+			<image src="{{ userInfo.avatarUrl }}"></image>
+		</view>
+		<view>{{ userInfo.nickName }}</view>
+    </view>
+
+    <view class="my_fixed">
+        <view class='tabs clearfix' bindtap="goList" data-url="share_list">
+            <image class='lefts fl' src='../../images/icon/fx.png' style="width:34rpx;height:34rpx;"></image>
+            <view class='dingdan fl'>我的分享</view>
+        </view>
+        <view class='tabs clearfix' bindtap="goList" data-url="collection_list">
+            <image class='lefts fl' src='../../images/icon/sc.png' style="width:34rpx;height:34rpx;"></image>
+            <view class='dingdan fl'>我的收藏</view>
+        </view>
+        <view class='tabs clearfix' bindtap="goList" data-url="join_list">
+            <image class='lefts fl' src='../../images/icon/love.png' style="width:34rpx;height:34rpx;"></image>
+            <view class='dingdan fl'>我的想参加</view>
+        </view>
+        <view class='tabs clearfix' bindtap="freeTell">
+            <image class='lefts fl' src='../../images/icon/phone.png' style="width:34rpx;height:34rpx;"></image>
+            <view class='dingdan fl'>客服电话</view>
+            <view class='rights fr'>123-456-7890</view>
+        </view>
+    </view>
+</view>

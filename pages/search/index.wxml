@@ -1,0 +1,54 @@
+<view class="search-box">
+    <!-- esarch S -->
+    <view class="search">
+        <image src="../../images/icon/search.png"></image>
+        <input placeholder="请输入搜索关键字" bindinput='changeSearch' confirm-type="search" bindconfirm="goSearch" bindblur="to" bindfocus="go"></input>
+    </view>
+    <!-- esarch E -->
+
+    <!-- 历史记录 S -->
+    <view class="historical" wx:if="{{isSearch && search_arr.length > 0}}">
+        <view class="t clearfix">
+            <text class="fl">搜索历史</text>
+            <image src="../../images/icon/del.png" bindtap="removeDel" class="fr"></image>
+        </view>
+
+        <view class="b">
+            <text wx:for="{{search_arr}}" wx:key="index" bindtap="itemSearch" data-index="{{index}}">{{item}}</text>
+        </view>
+    </view>
+    <!-- 历史记录 E -->
+</view>
+<view class="tttt"></view>
+
+<!-- 产品 S -->
+<view class="pro">
+    <view class="product-box clearfix"
+		wx:for="{{ list_data }}" wx:key="index" bindtap="goDetail" data-id="{{ item.id }}">
+        <image mode="aspectFill" src="{{ item.pic }}"></image>
+        <view>
+            <text class="title">{{ item.title }}</text>
+			<view class="diqu" wx:if="{{ item.hold_mode == 1 }}">
+				<image src="../../images/icon/diqu.png"></image>
+				<text>线上</text>
+			</view>
+			<view class="diqu" wx:if="{{ item.hold_mode == 2 }}">
+				<image src="../../images/icon/diqu.png"></image>
+				<text>{{ item.city }}  {{ item.address }}</text>
+			</view>
+			<view class="diqu">
+				<image class="time" src="../../images/icon/date.png"></image>
+				<text>{{ item.end_time }}</text>
+			</view>
+			<view class="label">
+				<text>{{ item.serve_category_id }}</text>
+				<text wx:for="{{ item.serve_type }}" wx:key="index">{{ item }}</text>
+			</view>
+            <!-- <text class="date">开始时间：{{ item.begin_time }}</text>
+            <text class="date">结束时间：{{ item.end_time }}</text> -->
+            <text class="money" wx:if="{{ item.pay_mode == 1 }}">收费</text>
+            <text class="money" wx:if="{{ item.pay_mode == 2 }}">免费</text>
+        </view>
+    </view>
+</view>
+<!-- 产品 E -->

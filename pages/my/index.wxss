@@ -1,0 +1,102 @@
+.mybtm {
+    width: 100%;
+    background: #fff;
+    border-radius: 23px 23px 0px 0px;
+    position: absolute;
+    top: 260rpx;
+    height: 800rpx;
+}
+
+.bgcs {
+    background: #191c26;
+    height: 400px;
+}
+
+/* .bgcs image{width: 100%;height:402rpx;} */
+
+.userinfo {
+    position: relative;
+    width: 750rpx;
+    height: 320rpx;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: -80px;
+    background: #191c26;
+}
+
+.userinfo button {
+	width: 200rpx;
+	display: block;
+	padding: 0;
+	background-color: transparent;
+}
+
+.userinfo button:not([size='mini']) {
+	width: 200rpx;
+}
+
+.userinfo-avatar {
+    overflow: hidden;
+    display: block;
+    width: 160rpx;
+    height: 160rpx;
+    margin: 20rpx;
+    margin-top: 10rpx;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.userinfo-avatar image {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	display: block;
+}
+
+.userinfo {
+    font-size: 14px;
+}
+
+.my_fixed {
+    position: absolute;
+    top: 176rpx;
+    width: 100%;
+}
+
+.tabs {
+    width: 90%;
+    margin: 10rpx auto;
+    border-bottom: 2rpx solid #f7f7f7;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.tabs button {
+    padding: 0rpx;
+}
+
+.lefts {
+    width: 40rpx;
+    height: 42rpx;
+    margin-top: 34rpx;
+}
+
+.dingdan {
+    font-size: 30rpx;
+    margin-left: 30rpx;
+}
+
+.right {
+    width: 16rpx;
+    height: 26rpx;
+    margin-top: 30rpx;
+}
+
+.rights {
+    font-size: 28rpx;
+    color: #999;
+    font-weight: 400;
+}

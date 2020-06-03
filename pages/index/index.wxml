@@ -1,0 +1,49 @@
+<view>
+    <view class="top-box">
+        <!-- 地区选择 && 搜索框 S -->
+        <view class="search-box clearfix">
+            <view class="fl" bindtap="goCity">
+                <image src="../../images/icon/diqu.png"></image>
+                <text>{{location}}</text>
+            </view>
+
+            <view class="fr" bindtap="goSearch">
+                <image src="../../images/icon/search.png"></image>
+                <text>搜索更多活动</text>
+            </view>
+        </view>
+        <!-- 地区选择 && 搜索框 E -->
+
+        <!-- 筛选 S -->
+        <scroll-view scroll-x="true" style="white-space: nowrap; display:flex; margin-bottom:10rpx;">
+            <view wx:for="{{ tab_list }}" class="{{ tab_active == index ? 'active' : '' }}" wx:key="index" bindtap="setTabIndex" data-index="{{ index }}" data-id="{{ item.id }}">{{ item.title }}</view>
+        </scroll-view>
+        <!-- 筛选 E -->
+    </view>
+    <view class="ttt"></view>
+
+    <!-- 轮播 S -->
+    <swiper indicator-dots="{{indicatorDots}}" indicator-active-color="#87CEFA" indicator-color="#FFFFFF" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{ banner_data }}" wx:key="index">
+            <swiper-item>
+                <image mode="aspectFill" catchtap="goDetail" src="{{ item.img }}" data-id="{{ item.url }}" style='width:100%;height:322rpx;'></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <!-- 轮播 E -->
+
+    <!-- 热门活动 S -->
+    <view class="hot_activity" wx:if="{{ !no }}">
+        <text class="title">热门活动</text>
+        <view class="content clearfix">
+            <view class="box fl" wx:for="{{ list_data }}" wx:key="index" bindtap="goDetail" data-id="{{ item.id }}">
+                <image mode="aspectFill" src="{{ item.pic }}"></image>
+                <text class="title">{{ item.title }}</text>
+                <text class="money" wx:if="{{ item.pay_mode == 1 }}">收费</text>
+                <text class="money" wx:if="{{ item.pay_mode == 2 }}">免费</text>
+            </view>
+        </view>
+    </view>
+    <view class="no" wx:if="{{ no }}">没有更多数据</view>
+    <!-- 热门活动 E -->
+</view>
