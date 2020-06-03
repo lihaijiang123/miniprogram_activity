@@ -6,12 +6,13 @@ Page({
      * 页面的初始数据
      */
     data: {
-		userInfo: "",
+        userInfo: "",
+        add: false
     },
 
-    freeTell: function() {
-        wx.makePhoneCall({
-            phoneNumber: '123-456-7890',
+    help: function() {
+        wx.navigateTo({
+          url: '/pages/help/help',
         })
     },
 
@@ -32,7 +33,8 @@ Page({
 			this.setData({
 				userInfo: JSON.parse(userInfo)
 			})
-		}
+        }
+
     },
 
 	onGotUserInfo: function (e) {
@@ -55,7 +57,13 @@ Page({
 				userInfo: e.detail.userInfo
 			})
 		}
-	},
+    },
+    
+    addMine: function() {
+        this.setData({
+            add : !this.data.add
+        })
+    },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
@@ -68,7 +76,9 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-
+        this.setData({
+            add: false
+        })
     },
 
     /**

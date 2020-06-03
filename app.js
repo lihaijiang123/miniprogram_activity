@@ -15,7 +15,7 @@ App({
 				success: res => {
 					// 发送 res.code 到后台换取 openId, sessionKey, unionId
 					wx.request({
-						url: 'http://relclothing.fuyouhome.top/login',
+						url: 'https://relclothing.fuyouhome.top/login',
 						data: {
 							code: res.code
 						},

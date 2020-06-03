@@ -100,3 +100,36 @@
     color: #999;
     font-weight: 400;
 }
+
+.addMine {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.bgblcak {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    left: 0;
+    top: 0;
+    z-index: 99999999999999;
+    text-align: center;
+    color: #fff;
+
+}
+
+.bgblcak .content {
+    display: block;
+    padding: 100rpx 10%;
+    font-size: 28rpx;
+}
+
+.bgblcak .btn {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 10rpx;
+    font-size: 28rpx;
+    border-radius: 5rpx;
+}

@@ -6,7 +6,8 @@
 		"pages/city/city",
 		"pages/search/index",
 		"pages/content/index",
-		"pages/list/index"
+		"pages/list/index",
+		"pages/help/help"
 	],
 	"window": {
 		"backgroundTextStyle": "light",

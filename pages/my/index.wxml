@@ -32,12 +32,23 @@
         </view>
         <view class='tabs clearfix' bindtap="goList" data-url="join_list">
             <image class='lefts fl' src='../../images/icon/love.png' style="width:34rpx;height:34rpx;"></image>
-            <view class='dingdan fl'>我的想参加</view>
+            <view class='dingdan fl'>想参加</view>
         </view>
-        <view class='tabs clearfix' bindtap="freeTell">
+        <view class='tabs clearfix' bindtap="help">
             <image class='lefts fl' src='../../images/icon/phone.png' style="width:34rpx;height:34rpx;"></image>
-            <view class='dingdan fl'>客服电话</view>
-            <view class='rights fr'>123-456-7890</view>
+            <view class='dingdan fl'>客服与帮助</view>
         </view>
+        <view class='tabs clearfix' bindtap="addMine">
+            <image class='lefts fl' src='../../images/icon/save.png' style="width:34rpx;height:34rpx;"></image>
+            <view class='dingdan fl'>添加到我的小程序</view>
+        </view>
+        
+    </view>
+</view>
+
+<view class="addMine" wx:if="{{ add }}">
+    <view class="bgblcak">
+    <text class="content">点击右上角 ·•· 添加至我的小程序，即可快速访问</text>
+    <text bindtap="addMine" class="btn">我知道了！</text>
     </view>
 </view>

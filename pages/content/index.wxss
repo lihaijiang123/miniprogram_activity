@@ -186,7 +186,3 @@
 	width: 30rpx;
 	height: 30rpx;
 }
-
-.w100 {
-	width: 100%;
-}
