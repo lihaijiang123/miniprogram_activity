@@ -307,7 +307,7 @@ Page({
         wx.request({
             url: url + '/test',
             data: {
-                userId: 1,
+                userId: wx.getStorageSync('user_id'),
 				search_type: 'hot',
                 page: page,
                 city: that.data.city,
