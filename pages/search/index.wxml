@@ -41,7 +41,7 @@
 				<text>{{ item.end_time }}</text>
 			</view>
 			<view class="label">
-				<text>{{ item.serve_category_id }}</text>
+				<text wx:if="{{ item.serve_category_id }}">{{ item.serve_category_id }}</text>
 				<text wx:for="{{ item.serve_type }}" wx:key="index">{{ item }}</text>
 			</view>
             <!-- <text class="date">开始时间：{{ item.begin_time }}</text>

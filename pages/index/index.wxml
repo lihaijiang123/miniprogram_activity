@@ -3,7 +3,7 @@
         <!-- 地区选择 && 搜索框 S -->
         <view class="search-box clearfix">
             <view class="fl" bindtap="goCity">
-                <image src="../../images/icon/diqu.png"></image>
+                <image src="../../images/icon/wz.png"></image>
                 <text>{{location}}</text>
             </view>
 
