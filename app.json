@@ -1,0 +1,48 @@
+{
+	"pages": [
+		"pages/index/index",
+		"pages/all_activity/index",
+		"pages/my/index",
+		"pages/city/city",
+		"pages/search/index",
+		"pages/content/index",
+		"pages/list/index",
+		"pages/help/help"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarTextStyle": "white",
+		"navigationBarBackgroundColor": "#87CEFA"
+	},
+	"permission": {
+		"scope.userLocation": {
+			"desc": "您的位置信息将用于该小程序"
+		}
+	},
+	"tabBar": {
+		"color": "#BEBEBE",
+		"selectedColor": "#87CEFA",
+		"list": [
+			{
+				"iconPath": "/images/icon/index.png",
+				"selectedIconPath": "/images/icon/a_index.png",
+				"pagePath": "pages/index/index",
+				"text": "首页"
+			},
+			{
+				"iconPath": "/images/icon/activity.png",
+				"selectedIconPath": "/images/icon/a_activity.png",
+				"pagePath": "pages/all_activity/index",
+				"text": "全部活动"
+			},
+			{
+				"iconPath": "/images/icon/my.png",
+				"selectedIconPath": "/images/icon/a_my.png",
+				"pagePath": "pages/my/index",
+				"text": "我的"
+			}
+		]
+	},
+	"style": "v2",
+	"sitemapLocation": "sitemap.json"
+}
