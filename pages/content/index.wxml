@@ -82,13 +82,8 @@
     <image src="../../images/icon/sc.png" class="iconfont"></image>
     <text>收藏</text>
   </view>
-  <button open-type='share' class="home">
-    <image src="../../images/icon/fx.png" class="iconfont"></image>
-    <text>分享</text>
-  </button>
 
-  <view wx:if="{{ detail_data.join }}" class="baoming" bindtap="wantJoin">已想参加</view>
-  <view wx:else class="baoming" bindtap="wantJoin">想参加</view>
+  <button open-type='share' class="baoming" >分享</button>
 
 </view>
 <view class="bottom-box"></view>

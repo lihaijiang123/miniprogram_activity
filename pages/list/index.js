@@ -44,7 +44,7 @@ Page({
 		if (type == 1) {
 			if (JSON.parse(options.data).length <= 0) {
 				wx.showToast({
-					title: '没有查到数据',
+					title: '已加载全部',
 					icon: 'none'
 				})
 				that.setData({
@@ -72,7 +72,7 @@ Page({
 					console.log(res);
 					if (res.data.data.data.length <= 0) {
 						wx.showToast({
-							title: '没有查到数据',
+							title: '已加载全部',
 							icon: 'none'
 						})
 						that.setData({
@@ -148,7 +148,7 @@ Page({
 					console.log(res);
 					if (res.data.data.active_list.data.length <= 0) {
 						wx.showToast({
-							title: '没有查到数据',
+							title: '已加载全部',
 							icon: 'none'
 						})
 					} else {
@@ -176,7 +176,7 @@ Page({
 					console.log(res);
 					if (res.data.data.data.length <= 0) {
 						wx.showToast({
-							title: '没有查到数据',
+							title: '已加载全部',
 							icon: 'none'
 						})
 					} else {

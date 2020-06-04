@@ -316,7 +316,7 @@ Page({
             success: function(res) {
                 if (res.data.data.active_list.length <= 0) {
                     wx.showToast({
-                        title: '没有更多数据',
+                        title: '已加载全部',
                         icon: 'none'
                     })
                 } else {
