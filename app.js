@@ -7,6 +7,7 @@ App({
         wx.setStorageSync('logs', logs)
     },
 
+
 	getOpenid: function () {
 		var that = this;
 		return new Promise(function (resolve, reject) {
