@@ -1,4 +1,4 @@
-/* pages/help/help.wxss */
+git /* pages/help/help.wxss */
 .content {
   width: 730rpx;
   margin: 0 10rpx;
