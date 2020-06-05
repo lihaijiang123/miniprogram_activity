@@ -15,7 +15,7 @@
         <!-- 地区选择 && 搜索框 E -->
 
         <!-- 筛选 S -->
-        <scroll-view scroll-x="true" style="white-space: nowrap; display:flex; margin-bottom:10rpx;">
+        <scroll-view class="headscroll" scroll-x="true" style="white-space: nowrap; display:flex; margin-bottom:10rpx;">
             <view wx:for="{{ tab_list }}" class="{{ tab_active == index ? 'active' : '' }}" wx:key="index" bindtap="setTabIndex" data-index="{{ index }}" data-id="{{ item.id }}">{{ item.title }}</view>
         </scroll-view>
         <!-- 筛选 E -->

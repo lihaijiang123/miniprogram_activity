@@ -61,7 +61,7 @@ Page({
 		setTimeout(() => {
 			let url = app.globalData.dev_api;
 			wx.request({
-				url: url + '/test',
+				url: url + '/lists',
 				data: {
 					userId: wx.getStorageSync('user_id'),
 					city: that.data.city,
@@ -107,7 +107,7 @@ Page({
 		let url = app.globalData.dev_api;
 		let that = this;
 		wx.request({
-			url: url + '/test',
+			url: url + '/lists',
 			data: {
 				userId: wx.getStorageSync('user_id'),
 				city: that.data.city
@@ -338,7 +338,7 @@ Page({
 		let that = this;
 		page++
 		wx.request({
-			url: url + '/test',
+			url: url + '/lists',
 			data: {
 				userId: wx.getStorageSync('user_id'),
 				city: that.data.city,

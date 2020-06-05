@@ -110,23 +110,23 @@ button::after {
     text-indent: 60rpx;
     width: 100%;
 }
-scroll-view {
+scroll-view.headscroll {
     height: 80rpx;
     line-height: 80rpx;
 }
 
-scroll-view view {
+scroll-view.headscroll view {
     margin-right: 20rpx;
     font-size: 33rpx;
     display: inline-block;
     color: #bebebe;
 }
 
-scroll-view view:first-child {
+scroll-view.headscroll view:first-child {
     margin-left: 30rpx;
 }
 
-scroll-view view.active {
+scroll-view.headscroll view.active {
     font-size: 40rpx;
     color: #333;
     font-weight: bold;
