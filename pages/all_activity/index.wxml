@@ -13,14 +13,8 @@
   </view>
   <!-- 地区选择 && 搜索框 E -->
 
-  <!-- 筛选 S -->
-  <scroll-view class="headscroll" scroll-x="true" style="white-space: nowrap; display:flex;" catchtouchmove='true'>
-    <view wx:for="{{ list_data.active_types }}" class="{{ tab_active == item.id ? 'active' : '' }}" wx:key="index" bindtap="setTabIndex" data-index="{{ item.id }}">{{ item.title }}</view>
-  </scroll-view>
-  <!-- 筛选 E -->
-
   <!-- 下拉 筛选 S -->
-  <!-- <view class="goDown">
+  <view class="goDown">
 		<view class="item" catchtap="clickHandler" data-index="1">
 			{{ sj || '时间排序' }}
 			<image src="../../images/icon/down.png"></image>
@@ -41,10 +35,9 @@
 			<view class="{{ hold_mode == 1 ? 'active' : '' }}" catchtap="clickXsX" data-index="1" >线上</view>
 			<view class="{{ hold_mode == 2 ? 'active' : '' }}" catchtap="clickXsX" data-index="2" >线下</view>
 		</view>
-	</view> -->
+	</view>
   <!-- 下拉 筛选 E -->
 </view>
-<view class="ttt"></view>
 <!-- <view class="back" catchtap="delHandler" wx:if="{{ is_options }}" catchtouchmove='true'></view> -->
 
 <!-- 产品 S -->

@@ -25,7 +25,8 @@
 		},
 		"useIsolateContext": true,
 		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false
+		"userConfirmedUseCompilerModuleSwitch": false,
+		"nodeModules": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.11.0",
