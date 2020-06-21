@@ -155,7 +155,7 @@ scroll-view.headscroll view.active {
 
 .product-box {
     overflow: hidden;
-    margin: 15rpx auto 0;
+    margin: 0 auto 15rpx;
     background-color: #fff;
     padding: 30rpx 30rpx 0;
 }
@@ -189,6 +189,7 @@ scroll-view.headscroll view.active {
     width: 100%;
     padding-bottom: 60rpx;
     background-color: #f6f6f6;
+    padding-top: 180rpx;
 }
 
 .product-box .diqu {}
