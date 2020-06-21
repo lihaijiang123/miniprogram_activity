@@ -39,8 +39,11 @@
             <view class="box fl" wx:for="{{ list_data }}" wx:key="index" bindtap="goDetail" data-id="{{ item.id }}">
                 <image mode="aspectFill" src="{{ item.pic }}"></image>
                 <text class="title">{{ item.title }}</text>
-                <text class="money" wx:if="{{ item.pay_mode == 1 }}">收费</text>
-                <text class="money" wx:if="{{ item.pay_mode == 2 }}">免费</text>
+                <view class="addr">
+                    <text class="subtitle fl" wx:if="{{ item.hold_mode == 1 }}">线上活动</text>
+                    <text class="subtitle fl" wx:if="{{ item.hold_mode == 2 }}">{{ item.city }}</text>
+                    <text class="subtitle fr">{{ item.begin_time }}</text>
+                </view>
             </view>
         </view>
     </view>

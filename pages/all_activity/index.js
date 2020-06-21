@@ -61,11 +61,12 @@ Page({
 		setTimeout(() => {
 			let url = app.globalData.dev_api;
 			wx.request({
-				url: url + '/lists',
+				url: url + '/test',
 				data: {
 					userId: wx.getStorageSync('user_id'),
 					city: that.data.city,
-					serve_type_id: that.data.tab_active
+					serve_type_id: that.data.tab_active,
+					type: 'list',
 				},
 				success: function (res) {
 					let data = res.data.data;
@@ -107,10 +108,11 @@ Page({
 		let url = app.globalData.dev_api;
 		let that = this;
 		wx.request({
-			url: url + '/lists',
+			url: url + '/test',
 			data: {
 				userId: wx.getStorageSync('user_id'),
-				city: that.data.city
+				city: that.data.city,
+				type: 'list',
 			},
 			success: function (res) {
 				let data = res.data.data;
@@ -338,7 +340,7 @@ Page({
 		let that = this;
 		page++
 		wx.request({
-			url: url + '/lists',
+			url: url + '/test',
 			data: {
 				userId: wx.getStorageSync('user_id'),
 				city: that.data.city,
@@ -346,6 +348,7 @@ Page({
 				order: that.data.begin_time__desc,
 				serve_type_id: serve_type_id,
 				page: page,
+				type: 'list',
 			},
 			success: function (res) {
 				if (res.data.data.active_list.length <= 0) {

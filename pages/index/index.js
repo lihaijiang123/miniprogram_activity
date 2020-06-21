@@ -84,7 +84,7 @@ Page({
             url: url + '/test',
             data: {
                 userId: wx.getStorageSync('user_id'),
-				search_type: 'hot',
+				type: 'index',
                 // page: page,
                 city: that.data.city,
                 serve_type_id: that.data.type_id
@@ -308,7 +308,7 @@ Page({
             url: url + '/test',
             data: {
                 userId: wx.getStorageSync('user_id'),
-				search_type: 'hot',
+				type: 'index',
                 page: page,
                 city: that.data.city,
                 serve_type_id: that.data.type_id
