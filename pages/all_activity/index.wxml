@@ -14,31 +14,26 @@
   <!-- 地区选择 && 搜索框 E -->
 
   <!-- 下拉 筛选 S -->
-  <view class="goDown">
-		<view class="item" catchtap="clickHandler" data-index="1">
-			{{ sj || '时间排序' }}
-			<image src="../../images/icon/down.png"></image>
-		</view>
-		<view class="item" catchtap="clickHandler" data-index="2">
-			{{ cs || '举办场所' }}
-			<image src="../../images/icon/down.png"></image>
-		</view>
+  <van-dropdown-menu active-color="#87CEFA">
+    <van-dropdown-item title="{{ title1 }}" value="{{ value1 }}" options="{{ option1 }}" />
+    <van-dropdown-item title="{{ title2 }}" value="{{ value2 }}" options="{{ option2 }}" />
+    <van-dropdown-item title="{{ title3 }}" value="{{ value3 }}" options="{{ option3 }}" />
+    <van-dropdown-item title="{{ title4 }}" id="item">
+      <van-cell title="包邮">
+        <van-switch
+          slot="right-icon"
+          size="24px"
+          style="height: 26px"
+          checked="{{ switch1 }}"
+          bind:change="onSwitch1Change"
+        />
+      </van-cell>
+      
+    </van-dropdown-item>
 
-		<view class="options" wx:if="{{ options_index == 1 }}" catchtouchmove='true'>
-			<view class="{{ begin_time__desc == '0' ? 'active' : '' }}" catchtap="clickShJi" data-index="0">不限</view>
-			<view class="{{ begin_time__desc == 'begin_time__asc' ? 'active' : '' }}" catchtap="clickShJi" data-index="begin_time__asc">升序</view>
-			<view class="{{ begin_time__desc == 'begin_time__desc' ? 'active' : '' }}" catchtap="clickShJi" data-index="begin_time__desc">降序</view>
-		</view>
-
-		<view class="options" wx:if="{{ options_index == 2 }}" catchtouchmove='true'>
-			<view class="{{ hold_mode == 0 ? 'active' : '' }}" catchtap="clickXsX" data-index="0" >不限</view>
-			<view class="{{ hold_mode == 1 ? 'active' : '' }}" catchtap="clickXsX" data-index="1" >线上</view>
-			<view class="{{ hold_mode == 2 ? 'active' : '' }}" catchtap="clickXsX" data-index="2" >线下</view>
-		</view>
-	</view>
+  </van-dropdown-menu>
   <!-- 下拉 筛选 E -->
 </view>
-<!-- <view class="back" catchtap="delHandler" wx:if="{{ is_options }}" catchtouchmove='true'></view> -->
 
 <!-- 产品 S -->
 <view class="pro" wx:if="{{ !no }}">

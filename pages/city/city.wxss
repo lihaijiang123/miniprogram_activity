@@ -1,4 +1,7 @@
 /* pages/city/city.wxss */
+page {
+    background: #fff;
+}
 
 .container-inner {
     display: flex;
@@ -68,7 +71,6 @@ scroll-view {
 
 .city-picker {
     padding: 16rpx 0 16rpx 16rpx;
-    background-color: #f5f5f5;
     margin-bottom: -10rpx;
 }
 
@@ -86,7 +88,6 @@ scroll-view {
 }
 
 .hot-city {
-    background-color: #f5f5f5;
     margin-bottom: -10rpx;
     display: flex;
     flex-wrap: wrap;

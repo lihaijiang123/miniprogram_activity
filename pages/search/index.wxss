@@ -232,11 +232,6 @@ scroll-view view.active {
     -webkit-box-orient: vertical;
 }
 
-.pro {
-	width: 100%;
-	padding-bottom: 60rpx;
-}
-
 .diqu {
 	padding: 0 5rpx;
 }

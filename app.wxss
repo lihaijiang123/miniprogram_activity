@@ -1,3 +1,7 @@
+page {
+    background-color: rgba(245, 245, 245, 1);
+}
+
 .container {
     padding: 0 30rpx;
 }
@@ -145,9 +149,7 @@ scroll-view.headscroll view.active {
 }
 
 .ttt {
-    width: 100%;
-    height: 180rpx;
-    margin-bottom: 20rpx;
+    height: 200rpx;
 }
 
 /* 产品 */
@@ -186,10 +188,7 @@ scroll-view.headscroll view.active {
 }
 
 .pro {
-    width: 100%;
-    padding-bottom: 60rpx;
-    background-color: #f6f6f6;
-    padding-top: 180rpx;
+    margin-top: 180rpx;
 }
 
 .product-box .diqu {}
@@ -253,6 +252,7 @@ scroll-view.headscroll view.active {
 }
 
 
-.theme-color,.theme-color text{
-    color: #87CEFA!important;
+.theme-color,
+.theme-color text {
+    color: #87CEFA !important;
 }

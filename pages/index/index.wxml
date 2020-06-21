@@ -38,12 +38,15 @@
         <view class="content clearfix">
             <view class="box fl" wx:for="{{ list_data }}" wx:key="index" bindtap="goDetail" data-id="{{ item.id }}">
                 <image mode="aspectFill" src="{{ item.pic }}"></image>
-                <text class="title">{{ item.title }}</text>
-                <view class="addr">
-                    <text class="subtitle fl" wx:if="{{ item.hold_mode == 1 }}">线上活动</text>
-                    <text class="subtitle fl" wx:if="{{ item.hold_mode == 2 }}">{{ item.city }}</text>
-                    <text class="subtitle fr">{{ item.begin_time }}</text>
+                <view class="box-desc">
+                    <text class="title">{{ item.title }}</text>
+                    <view class="addr">
+                        <text class="subtitle fl" wx:if="{{ item.hold_mode == 1 }}">线上活动</text>
+                        <text class="subtitle fl" wx:if="{{ item.hold_mode == 2 }}">{{ item.city }}</text>
+                        <text class="subtitle fr">{{ item.begin_time }}</text>
+                    </view>
                 </view>
+            
             </view>
         </view>
     </view>

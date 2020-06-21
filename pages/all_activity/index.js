@@ -19,17 +19,55 @@ Page({
 		// page
 		page: 1,
 
-		is_options: false,
-		options_index: 0,
-
-		begin_time__desc: 0,
 		hold_mode: '',
 
-		sj: '',
-		cs: '',
-
 		no: false,
+		
+		// title
+		title1: '时间',
+		title2: '综合排序',
+		title3: '价格',
+		title4: '活动类别',
+		//default value
+		value1: 0,
+		value2: '10',
+    value3: '20',
+		value4: '30',
+		// option
+		option1: [
+      { text: '全部', value: 0 },
+      { text: '今天', value: 1 },
+			{ text: '明天', value: 2 },
+      { text: '本周', value: 3 },
+      { text: '本月', value: 4 },
+      { text: '本年', value: 5 },
+      { text: '明年及以后', value: 6 },
+      { text: '已结束', value: 7 },
+    ],
+    option2: [
+      { text: '最多浏览', value: '10' },
+      { text: '最多收藏', value: '11' },
+			{ text: '最多分享', value: '12' },
+			{ text: '最新发布', value: '12' },
+		],
+		option3: [
+      { text: '全部', value: '20' },
+      { text: '免费', value: '21' },
+      { text: '收费', value: '22' },
+		],
+		option4: [
+      { text: '活动类别', value: '30' },
+      { text: '好评排序', value: '31' },
+      { text: '销量排序', value: '32' },
+    ],
+		switchTitle1: '包邮',
+
 	},
+
+  onSwitch1Change({ detail }) {
+    this.setData({ switch1: detail });
+  },
+
 
 	// goCity
 	goCity: function () {

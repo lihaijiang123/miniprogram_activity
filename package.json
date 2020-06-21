@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@vant/weapp": "^1.3.2"
+  },
+  "name": "minprogram",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lihaijiang123/miniprogram_activity.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lihaijiang123/miniprogram_activity/issues"
+  },
+  "homepage": "https://github.com/lihaijiang123/miniprogram_activity#readme",
+  "description": ""
+}
