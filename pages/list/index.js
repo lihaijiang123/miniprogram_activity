@@ -36,6 +36,20 @@ Page({
 	 */
 	onLoad: function (options) {
 		let type = options.type;
+
+		switch (type) {
+			case 'collection_list':
+				wx.setNavigationBarTitle({title: '我的收藏'})
+				break;
+			case 'share_list':
+				wx.setNavigationBarTitle({title: '我的分享'})
+				break;
+			case 'join_list':
+				wx.setNavigationBarTitle({title: '想参加'})
+				break;
+		}
+
+
 		this.setData({
 			type: type
 		})

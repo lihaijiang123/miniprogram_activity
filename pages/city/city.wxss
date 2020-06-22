@@ -1,8 +1,4 @@
 /* pages/city/city.wxss */
-page {
-    background: #fff;
-}
-
 .container-inner {
     display: flex;
     flex-direction: row-reverse;

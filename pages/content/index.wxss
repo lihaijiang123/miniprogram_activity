@@ -24,8 +24,8 @@
 
 .p {
 	width: 686rpx;
-	margin: 0 auto 40rpx;
-	font-size: 30rpx;
+	margin: 0 auto 20rpx;
+	font-size: 26rpx;
 	color: #bfbfbf;
 }
 
@@ -94,6 +94,7 @@ height: auto;
 
 .content {
 	padding-bottom: 40rpx;
+	overflow: hidden;
 }
 
 .bottom {
@@ -188,4 +189,57 @@ height: auto;
 	margin-left: 10rpx;
 	width: 30rpx;
 	height: 30rpx;
+}
+
+
+
+/* 主办方 */
+
+.company-box {
+	padding-bottom: 30rpx;
+	overflow: hidden;
+}
+
+
+.company_logo {
+	overflow: hidden;
+	border-radius: 10rpx;
+}
+
+.company_logo ,.company_logo image{
+	width: 180rpx;
+	height: 180rpx;
+}
+
+.company_info{
+	width: 477rpx;
+	margin-left: 28rpx;
+}
+
+.company_info .company_name{
+	font-size: 35rpx;
+	color: #000;
+	padding-bottom: 14rpx;
+}
+
+.company_info .company_desc{
+	font-size: 22rpx;
+	padding-bottom: 16rpx;
+}
+
+
+.company_info  .company_other{
+	font-size: 22rpx;
+}
+
+.company_info  .company_other text{
+	margin-right: 30rpx;
+}
+
+.company_operation{
+	text-align: center;
+}
+
+.company_operation .company_button{
+	padding: 0 80rpx;
 }
