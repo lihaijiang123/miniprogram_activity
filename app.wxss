@@ -86,7 +86,6 @@ button::after {
     vertical-align: middle;
 }
 
-.search-box>view {}
 
 .search-box view.fr {
     width: 500rpx;
@@ -190,7 +189,6 @@ scroll-view.headscroll view.active {
     min-height: 330rpx;
 }
 
-.product-box .diqu {}
 
 .product-box .diqu image {
     width: 30rpx;
@@ -254,4 +252,22 @@ scroll-view.headscroll view.active {
 .theme-color,
 .theme-color text {
     color: #87CEFA !important;
+}
+
+.organize_footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+}
+
+.organize_footer .footer_button {
+    height: 100rpx;
+}
+
+.organize_footer .footer_button image {
+    width: 50rpx;
+    height: 50rpx;
+    padding: 26rpx;
 }

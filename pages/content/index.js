@@ -7,7 +7,7 @@ Page({
 	 */
 	data: {
 		detail_data: {},
-		id: '',
+		id: ''
 	},
 
 	// goHome
@@ -75,6 +75,48 @@ Page({
 		})
 	},
 
+	
+	// 关注
+	attention: function () {
+		let url = app.globalData.dev_api;
+		let that = this;
+		wx.request({
+			url: url + '/attention',
+			data: {
+				userId: wx.getStorageSync('user_id'),
+				organize_id: that.data.organize_id
+			},
+			success: function (res) {
+				let data = that.data.detail_data;
+				if (data.attention) {
+					wx.showToast({
+						title: '取消关注',
+					})
+				}else {
+					wx.showToast({
+						title: '关注成功',
+					})
+				}
+				data.attention = !data.attention;
+				that.setData({
+					detail_data: data
+				})
+			}
+		})
+	},
+
+	// 主办方列表页
+	organize: function() {
+
+		console.log(this.data.organize_id);
+		console.log(this.data.detail_data.organize.name);
+		console.log('-----')
+
+		wx.navigateTo({
+			url: '/pages/organize/list/index?organize_id=' + this.data.organize_id + '&name=' + this.data.detail_data.organize.name
+		})
+	},
+
 	copyUrl: function () {
 		let that = this
     wx.showToast({
@@ -100,7 +142,8 @@ Page({
 			success: function (res) {
 				res.data.data.content = res.data.data.content.replace(/\<img/g, '<img style="max-width:100%;height:auto;display:inline-block;"');
 				that.setData({
-					detail_data: res.data.data
+					detail_data: res.data.data,
+					organize_id: res.data.data.organize_id
 				})
 			}
 		})
@@ -124,10 +167,8 @@ Page({
 		let $width=e.detail.width,    //获取图片真实宽度
 				$height=e.detail.height   //获取图片真实宽度
 				var ratio=$width/$height;    //图片的真实宽高比例
-				console.log(ratio)
 				var viewWidth=690,           //设置图片显示宽度，左右留有16rpx边距
 				viewHeight=viewWidth/ratio;    //计算的高度值
-				console.log(viewHeight)
 		var image = this.data.detail_data.share_img; 
 			image={
 				width: viewWidth,

@@ -1,0 +1,33 @@
+<view class="card" wx:for="{{list}}" wx:key="index" data-id="{{ item.id }}" bindtap="goDetail">
+
+	<image src="{{ item.pic }}"></image>
+	<view class="card_font">
+		<text class="title">{{item.title}}</text>
+		<view class="other">
+			<view class="fl">
+				<image class="iconfont icon" src="/images/icon/date.png" />
+				<text>{{ item.begin_time }}</text>
+			</view>
+			<view class="fr">
+				<image class="iconfont icon" src="/images/icon/wz.png" />
+				<text>{{ item.city }}</text>
+			</view>
+		</view>
+	</view>
+</view>
+
+
+<view class="organize_footer">
+	<van-row>
+		<van-col span="12">
+			<view class="footer_button">
+				<image src="/images/icon/date.png"></image>
+			</view>
+		</van-col>
+		<van-col span="12">
+			<view class="footer_button" bindtap="organizeInfo">
+				<image src="/images/icon/date.png"></image>
+			</view>
+		</van-col>
+	</van-row>
+</view>

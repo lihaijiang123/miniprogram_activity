@@ -46,18 +46,18 @@
 	<view class="body">
 		<view class="company-box">
       <view class="company_logo fl">
-        <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1592809600901&di=5288bd993a9303c474989a33c2119c71&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsportapp%2Fcrawl%2F20170925%2FOoz2-fymesii5460110.jpg"></image>
+        <image src="{{ detail_data.organize.pic }}"></image>
       </view>
       <view class="company_info fr">
         <view class="company_name">
-          <text>咔咔剧团</text>
+          <text>{{ detail_data.organize.name }}</text>
         </view>
         <view class="company_desc">
-          <text>咔咔剧团创始人:郑文迪。中国创美达学边海燕学时,影视演员,话剧演员,北京青年许菊工作者...</text>
+          <text>{{ detail_data.organize.desc }}</text>
         </view>
         <view class="company_other">
-          <text>粉丝  79</text>
-          <text>活动 2</text>
+          <text>粉丝  {{ detail_data.organize.fans }}</text>
+          <text>活动  {{ detail_data.organize.activity_num }}</text>
         </view>
       </view>
     </view>
@@ -65,10 +65,13 @@
     <view class='company_operation'>
         <van-row>
           <van-col span="12">
-            <van-button custom-class="company_button"  round plain icon="star-o" size="small" type="primary">关注</van-button>
+							
+            <van-button wx:if="{{ detail_data.attention }}" bindtap="attention" custom-class="company_button"  round plain icon="star-o" size="small" type="primary">已关注</van-button>
+            <van-button wx:else custom-class="company_button" bindtap="attention"  round plain icon="star-o" size="small" type="primary">关注</van-button>
+
           </van-col>
           <van-col span="12">
-            <van-button custom-class="company_button" round plain size="small" type="primary">主办方小站</van-button>
+            <van-button bind:click="organize" custom-class="company_button" round plain size="small" type="primary">主办方小站</van-button>
           </van-col>
         </van-row>
     </view>

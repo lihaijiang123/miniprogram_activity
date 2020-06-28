@@ -1,0 +1,42 @@
+/* pages/organize/detail/index.wxss */
+.container_ {
+  padding-top: 20rpx;
+  box-shadow: whitesmoke;
+}
+
+.organize_top {
+  overflow: hidden;
+}
+
+.logo,
+.logo image {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.logo {
+  overflow: hidden;
+}
+
+.font {
+  width: 300rpx;
+  margin-left: 34rpx;
+}
+
+.font .title {
+  font-size: 33rpx;
+  font-weight: 700;
+  margin: 30rpx 0;
+}
+
+.font .other {
+  font-size: 25rpx;
+}
+
+.font .other text {
+  margin-right: 30rpx;
+}
+
+.content {
+  margin-top: 36rpx;
+}

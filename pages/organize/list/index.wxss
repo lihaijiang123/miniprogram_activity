@@ -1,0 +1,43 @@
+page{
+  background-color: rgb(245, 245, 245);
+}
+
+.card{
+  background-color: #fff;
+  box-shadow: darkgrey;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  margin-top: 30rpx;
+}
+
+
+image {
+  width: 100%;
+  height: 322rpx;
+}
+
+.card_font{
+  margin-top: 30rpx;
+}
+
+.card .title{
+  font-weight: 700;
+  font-size: 30rpx;
+}
+
+.card .other{
+  margin-top: 30rpx;
+  overflow: hidden;
+  font-size: 27rpx;
+  color: rgb(170, 170, 170);
+}
+
+.card .other .icon{
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+
+

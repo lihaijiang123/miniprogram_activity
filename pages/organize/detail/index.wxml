@@ -1,0 +1,46 @@
+<view class="container">
+
+	<view class="container_">
+		<view class="organize_top">
+			<view class="logo fl">
+				<image src="{{ info.pic }}"></image>
+			</view>
+			<view class="font fl">
+				<view class="title">
+					<text>{{ info.name }}</text>
+				</view>
+				<view class="other">
+					<text>粉丝 {{ info.fans }}</text>
+					<text>活动 {{ info.activity_num }}</text>
+				</view>
+
+			</view>
+			<view class="fr">
+				<van-button wx:if="{{ info.attention }}" bindtap="attention" custom-class="company_button" plain icon="star-o" size="small" type="primary">已关注</van-button>
+				<van-button wx:else custom-class="company_button" bindtap="attention" plain icon="star-o" size="small" type="primary">关注</van-button>
+			</view>
+		</view>
+
+
+
+		<view class="content">
+			<rich-text class="" nodes="{{info.content || '--'}}"></rich-text>
+		</view>
+	</view>
+
+</view>
+
+<view class="organize_footer">
+	<van-row>
+		<van-col span="12">
+			<view class="footer_button" bindtap="organizeList">
+				<image src="/images/icon/date.png"></image>
+			</view>
+		</van-col>
+		<van-col span="12">
+			<view class="footer_button">
+				<image src="/images/icon/date.png"></image>
+			</view>
+		</van-col>
+	</van-row>
+</view>

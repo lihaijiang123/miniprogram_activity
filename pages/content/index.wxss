@@ -224,7 +224,13 @@ height: auto;
 
 .company_info .company_desc{
 	font-size: 22rpx;
-	padding-bottom: 16rpx;
+	margin-bottom: 16rpx;
+	overflow: hidden;
+	display: -webkit-box;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
 }
 
 
