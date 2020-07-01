@@ -1,0 +1,14 @@
+.dropdown-btn {
+  width: 160rpx;
+  margin: 10rpx !important;
+}
+
+.dropdown-col {
+  text-align: center;
+}
+
+.dropdown-title {
+  padding-left: 16rpx;
+  font-size: 24rpx;
+  color: #3b3d3f;
+}

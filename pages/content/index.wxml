@@ -66,7 +66,7 @@
         <van-row>
           <van-col span="12">
 							
-            <van-button wx:if="{{ detail_data.attention }}" bindtap="attention" custom-class="company_button"  round plain icon="star-o" size="small" type="primary">已关注</van-button>
+            <van-button wx:if="{{ detail_data.attention }}" bindtap="attention" custom-class="company_button" round plain icon="star-o" size="small" type="primary">已关注</van-button>
             <van-button wx:else custom-class="company_button" bindtap="attention"  round plain icon="star-o" size="small" type="primary">关注</van-button>
 
           </van-col>

@@ -15,20 +15,30 @@
 
   <!-- 下拉 筛选 S -->
   <van-dropdown-menu active-color="#87CEFA">
-    <van-dropdown-item title="{{ title1 }}" value="{{ value1 }}" options="{{ option1 }}" />
-    <van-dropdown-item title="{{ title2 }}" value="{{ value2 }}" options="{{ option2 }}" />
-    <van-dropdown-item title="{{ title3 }}" value="{{ value3 }}" options="{{ option3 }}" />
+    <van-dropdown-item bind:change="change" title="{{ title1 }}" value="{{ value }}" options="{{ option1 }}" />
+    <van-dropdown-item bind:change="change" title="{{ title2 }}" value="{{ value }}" options="{{ option2 }}" />
+    <van-dropdown-item bind:change="change" title="{{ title3 }}" value="{{ value }}" options="{{ option3 }}" />
     <van-dropdown-item title="{{ title4 }}" id="item">
-      <van-cell title="包邮">
-        <van-switch
-          slot="right-icon"
-          size="24px"
-          style="height: 26px"
-          checked="{{ switch1 }}"
-          bind:change="onSwitch1Change"
-        />
-      </van-cell>
-      
+    <van-row>
+      <text class="dropdown-title">关键词</text>
+    </van-row>
+    <van-row>
+      <van-col wx:for="{{ list_data.active_types }}" wx:key="index" custom-class="dropdown-col" span="6">
+        <van-button bind:click="dropdownClick" data-flag="type" data-id="{{ item.id }}"  custom-class="dropdown-btn" plain hairline color="#87CEFA" size="small">{{ item.title }}</van-button>
+      </van-col>
+    </van-row>
+
+    <van-divider />
+
+    <van-row>
+      <text class="dropdown-title">活动类别</text>
+    </van-row>
+    <van-row>
+      <van-col wx:for="{{ list_data.active_category }}" wx:key="index" custom-class="dropdown-col" span="6">
+        <van-button bind:click="dropdownClick" data-flag="category" data-id="{{ item.id }}" custom-class="dropdown-btn" plain hairline color="#87CEFA" size="small">{{ item.title }}</van-button>
+      </van-col>
+    </van-row>
+    
     </van-dropdown-item>
 
   </van-dropdown-menu>

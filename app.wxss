@@ -186,7 +186,6 @@ scroll-view.headscroll view.active {
 .pro {
     margin-top: 180rpx;
     background-color: rgba(245, 245, 245, 1);
-    min-height: 330rpx;
 }
 
 
