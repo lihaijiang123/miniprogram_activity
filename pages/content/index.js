@@ -33,7 +33,7 @@ Page({
 					wx.showToast({
 						title: '不想参加',
 					})
-				}else {
+				} else {
 					wx.showToast({
 						title: '想参加',
 					})
@@ -62,7 +62,7 @@ Page({
 					wx.showToast({
 						title: '取消收藏',
 					})
-				}else {
+				} else {
 					wx.showToast({
 						title: '收藏成功',
 					})
@@ -75,7 +75,7 @@ Page({
 		})
 	},
 
-	
+
 	// 关注
 	attention: function () {
 		let url = app.globalData.dev_api;
@@ -92,7 +92,7 @@ Page({
 					wx.showToast({
 						title: '取消关注',
 					})
-				}else {
+				} else {
 					wx.showToast({
 						title: '关注成功',
 					})
@@ -106,7 +106,7 @@ Page({
 	},
 
 	// 主办方列表页
-	organize: function() {
+	organize: function () {
 
 		console.log(this.data.organize_id);
 		console.log(this.data.detail_data.organize.name);
@@ -117,15 +117,22 @@ Page({
 		})
 	},
 
-	copyUrl: function () {
-		let that = this
-    wx.showToast({
-      title: '复制成功',
-    })
-    wx.setClipboardData({
-      data: that.data.detail_data.url,
-    })
-  },
+	/**
+		* 长按复制
+		*/
+	copy: function (e) {
+		let that = this;
+		let name = e.currentTarget.dataset.name;
+
+		wx.setClipboardData({
+			data: that.data.detail_data[name],
+			success: function (res) {
+				wx.showToast({
+					title: '复制成功',
+				});
+			}
+		});
+	},
 
 	/**
 	 * 生命周期函数--监听页面加载
@@ -153,31 +160,31 @@ Page({
 	},
 
 	imgShow: function (event) {
-		var that=this;
-    var src = that.data.detail_data.share_img;//获取data-src
-    var imgList = [that.data.detail_data.share_img];//获取data-list
-    //图片预览
-    wx.previewImage({
-      current: src, // 当前显示图片的http链接
-      urls: imgList // 需要预览的图片http链接列表
-    })
+		var that = this;
+		var src = that.data.detail_data.share_img;//获取data-src
+		var imgList = [that.data.detail_data.share_img];//获取data-list
+		//图片预览
+		wx.previewImage({
+			current: src, // 当前显示图片的http链接
+			urls: imgList // 需要预览的图片http链接列表
+		})
 	},
 
-	realImageLoad: function(e) {
-		let $width=e.detail.width,    //获取图片真实宽度
-				$height=e.detail.height   //获取图片真实宽度
-				var ratio=$width/$height;    //图片的真实宽高比例
-				var viewWidth=690,           //设置图片显示宽度，左右留有16rpx边距
-				viewHeight=viewWidth/ratio;    //计算的高度值
-		var image = this.data.detail_data.share_img; 
-			image={
-				width: viewWidth,
-				height: viewHeight         //viewHeight
-			}
-		 this.setData({
-			image:image
-		 })
- },
+	realImageLoad: function (e) {
+		let $width = e.detail.width,    //获取图片真实宽度
+			$height = e.detail.height   //获取图片真实宽度
+		var ratio = $width / $height;    //图片的真实宽高比例
+		var viewWidth = 690,           //设置图片显示宽度，左右留有16rpx边距
+			viewHeight = viewWidth / ratio;    //计算的高度值
+		var image = this.data.detail_data.share_img;
+		image = {
+			width: viewWidth,
+			height: viewHeight         //viewHeight
+		}
+		this.setData({
+			image: image
+		})
+	},
 
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
@@ -218,7 +225,7 @@ Page({
 	 * 页面上拉触底事件的处理函数
 	 */
 	onReachBottom: function () {
-		
+
 	},
 
 	/**

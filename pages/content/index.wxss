@@ -1,251 +1,262 @@
 
 .image {
-	width: 686rpx;
-	height: 400rpx;
-	display: block;
-	margin: 40rpx auto 0;
-	border-radius: 10rpx;
-	overflow: hidden;
+    width: 686rpx;
+    height: 400rpx;
+    display: block;
+    margin: 40rpx auto 0;
+    border-radius: 10rpx;
+    overflow: hidden;
 }
 
 .image image {
-	display: block;
-	width: 100%;
-	height: 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .title {
-	width: 686rpx;
-	margin: 30rpx auto;
-	font-size: 36rpx;
-	font-weight: bold;
-	line-height: 55rpx;
+    width: 686rpx;
+    margin: 30rpx auto;
+    font-size: 36rpx;
+    font-weight: bold;
+    line-height: 55rpx;
 }
 
 .p {
-	width: 686rpx;
-	margin: 0 auto 20rpx;
-	font-size: 26rpx;
-	color: #bfbfbf;
+    width: 686rpx;
+    margin: 0 auto 20rpx;
+    font-size: 26rpx;
+    color: #bfbfbf;
 }
 
 .money {
-	width: 686rpx;
-	margin: 0 auto 40rpx;
-	font-size: 40rpx;
-	font-weight: bold;
-	color: rgb(83, 186, 95);
+    width: 686rpx;
+    margin: 0 auto 40rpx;
+    font-size: 40rpx;
+    font-weight: bold;
+    color: rgb(83, 186, 95);
 }
 
 .date_or_text {
-	width: 686rpx;
-	margin: 0 auto 10rpx;
+    width: 686rpx;
+    margin: 0 auto 10rpx;
 }
 
 .date_or_text image {
-	display: inline-block;
-	vertical-align: middle;
-	margin-right: 20rpx;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20rpx;
 }
 
 .date_or_text text {
-	font-size: 30rpx;
-	display: inline-block;
-	vertical-align: middle;
-	color: #707070;
+    font-size: 30rpx;
+    display: inline-block;
+    vertical-align: middle;
+    color: #707070;
 }
 
 .top-box {
-	width: 100%;
-	padding-bottom: 40rpx;
-	border-bottom: 10rpx solid #eee;
-	position: relative;
-height: auto;
+    width: 100%;
+    padding-bottom: 40rpx;
+    border-bottom: 10rpx solid #eee;
+    position: relative;
+    height: auto;
 
 }
 
 .content {
-	width: 100%;
+    width: 100%;
 }
 
 .content .subtit {
-	width: 100%;
-	display: block;
-	border-bottom: 5rpx solid #eee;
-	font-size: 35rpx;
-	line-height: 100rpx;
-	margin-top: 20rpx;
+    width: 100%;
+    display: block;
+    border-bottom: 5rpx solid #eee;
+    font-size: 35rpx;
+    line-height: 100rpx;
+    margin-top: 20rpx;
 }
 
 .content .subtit text {
-	width: 686rpx;
-	margin: 0 auto;
-	display: block;
+    width: 686rpx;
+    margin: 0 auto;
+    display: block;
 }
 
 .content .body {
-	width: 686rpx;
-	margin: 30rpx auto 0;
-	display: block;
-	font-size: 30rpx;
-	line-height: 40rpx;
-	color: #8a8a8a;
+    width: 686rpx;
+    margin: 30rpx auto 0;
+    display: block;
+    font-size: 30rpx;
+    line-height: 40rpx;
+    color: #8a8a8a;
 }
 
 .content {
-	padding-bottom: 40rpx;
-	overflow: hidden;
+    padding-bottom: 40rpx;
+    overflow: hidden;
+}
+
+.content:last-child{
+    padding-bottom: 0;
 }
 
 .bottom {
-	width: 100%;
-	padding: 10rpx 15rpx;
-	box-sizing: border-box;
-	background-color: #fff;
-	border-top: 2rpx solid #eee;
-	position: fixed;
-	left: 0;
-	bottom: 0;
+    width: 100%;
+    padding: 10rpx 15rpx;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-top: 2rpx solid #eee;
+    position: fixed;
+    left: 0;
+    bottom: 0;
 }
 
-.bottom>.home {
-	width: 15%;
-	text-align: center;
-	display: inline-block;
-	vertical-align: middle;
-}
-
-
-.bottom>.home text {
-	font-size: 30rpx;
-	display: block;
-	color: #8a8a8a;
-  line-height: 30rpx;
-
+.bottom > .home {
+    width: 15%;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 
-.bottom>button {
-	padding: 0;
-	margin: 0;
-	display: inline-block;
-	vertical-align: middle;
-	font-weight: normal;
+.bottom > .home text {
+    font-size: 30rpx;
+    display: block;
+    color: #8a8a8a;
+    line-height: 30rpx;
+
+}
+
+
+.bottom > button {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: normal;
 }
 
 .bottom-box {
-	width: 100%;
-	height: 120rpx;
+    width: 100%;
+    height: 100rpx;
 }
 
 .baoming {
-	width: 40%;
-	height: 80rpx;
-	background-color: #87CEFA;
-	display: inline-block;
-	vertical-align: middle;
-	text-align: center;
-	line-height: 80rpx;
-	font-size: 30rpx;
-	border-radius: 50rpx;
-	margin-left: 15%;
-	color: #fff;
-	float: right;
+    width: 40%;
+    height: 80rpx;
+    background-color: #87CEFA;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 80rpx;
+    font-size: 30rpx;
+    border-radius: 50rpx;
+    margin-left: 15%;
+    color: #fff;
+    float: right;
 }
 
 .bottom .home .on {
-	color: #87CEFA;
+    color: #87CEFA;
 }
 
 .neirong {
-	line-height: 60rpx;
+    line-height: 60rpx;
 }
 
 .neirong image {
-	width: 100%;
-	display: block;
+    width: 100%;
+    display: block;
 }
 
 .label {
-	width: 100%;
-	box-sizing: border-box;
-	padding: 0 20rpx;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20rpx;
 }
 
 .label text {
-	display: inline-block;
-	height: 40rpx;
-	line-height: 40rpx;
-	border: 2rpx solid #87CEFA;
-	margin-top: 20rpx;
-	margin-left: 20rpx;
-	font-size: 26rpx;
-	color: #87CEFA;
-	padding: 0 10rpx;
-	border-radius: 5rpx;
+    display: inline-block;
+    height: 40rpx;
+    line-height: 40rpx;
+    border: 2rpx solid #87CEFA;
+    margin-top: 20rpx;
+    margin-left: 20rpx;
+    font-size: 26rpx;
+    color: #87CEFA;
+    padding: 0 10rpx;
+    border-radius: 5rpx;
 }
 
 .copy {
-	margin-left: 10rpx;
-	width: 30rpx;
-	height: 30rpx;
+    margin-left: 10rpx;
+    width: 30rpx;
+    height: 30rpx;
 }
-
 
 
 /* 主办方 */
 
 .company-box {
-	padding-bottom: 30rpx;
-	overflow: hidden;
+    padding-bottom: 30rpx;
+    overflow: hidden;
 }
 
 
 .company_logo {
-	overflow: hidden;
-	border-radius: 10rpx;
+    overflow: hidden;
+    border-radius: 10rpx;
 }
 
-.company_logo ,.company_logo image{
-	width: 180rpx;
-	height: 180rpx;
+.company_logo, .company_logo image {
+    width: 180rpx;
+    height: 180rpx;
 }
 
-.company_info{
-	width: 477rpx;
-	margin-left: 28rpx;
+.company_info {
+    width: 477rpx;
+    margin-left: 28rpx;
 }
 
-.company_info .company_name{
-	font-size: 35rpx;
-	color: #000;
-	padding-bottom: 14rpx;
+.company_info .company_name {
+    font-size: 35rpx;
+    color: #000;
+    padding-bottom: 14rpx;
 }
 
-.company_info .company_desc{
-	font-size: 22rpx;
-	margin-bottom: 16rpx;
-	overflow: hidden;
-	display: -webkit-box;
-	text-overflow: ellipsis;
-	word-wrap: break-word;
-	-webkit-line-clamp: 2;
-	-webkit-box-orient: vertical;
+.company_info .company_desc {
+    font-size: 22rpx;
+    margin-bottom: 16rpx;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 
-.company_info  .company_other{
-	font-size: 22rpx;
+.company_info .company_other {
+    font-size: 22rpx;
 }
 
-.company_info  .company_other text{
-	margin-right: 30rpx;
+.company_info .company_other text {
+    margin-right: 30rpx;
 }
 
-.company_operation{
-	text-align: center;
+.company_operation {
+    text-align: center;
 }
 
-.company_operation .company_button{
-	padding: 0 80rpx;
+.company_operation .company_button {
+    padding: 0 80rpx;
+}
+
+.instructions {
+	background: #474747;
+    color: #fff;
+    text-align: center;
+    font-size: 22rpx;
+    padding: 10rpx 0;
 }

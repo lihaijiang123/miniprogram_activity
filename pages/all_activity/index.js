@@ -78,8 +78,9 @@ Page({
 				that.setData({
 					list_data: data,
 					value: detail,
-
 				})
+
+				that.gotop()
 			}
 		})
 
@@ -112,7 +113,17 @@ Page({
 					list_data: data,
 					value: detail,
 				})
+
+				that.gotop()
+
 			}
+		})
+	},
+
+	// 回到最顶部
+	gotop: function(){
+		wx.pageScrollTo({
+			scrollTop: 0
 		})
 	},
 
@@ -268,7 +279,6 @@ Page({
 			data: {
 				userId: wx.getStorageSync('user_id'),
 				city: that.data.city,
-				serve_type_id: serve_type_id,
 				page: page,
 				type: 'list',
 				flag: that.value

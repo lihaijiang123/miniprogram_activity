@@ -4,7 +4,7 @@
 		<image mode="aspectFill" class="fl" src="{{ detail_data.pic }}"></image>
 	</view>
 
-	<view class="title">
+	<view class="title" selectable='true' bindlongtap='copy' data-name="title">
 		{{ detail_data.title }}
 	</view>
 
@@ -27,12 +27,12 @@
 	<view class="date_or_text">
 		<image src="../../images/icon/wz.png" class="iconfont"></image>
 		<text wx:if="{{ detail_data.hold_mode == 1 }}">线上</text>
-		<text wx:if="{{ detail_data.hold_mode == 2 }}">{{ detail_data.city }} {{ detail_data.address }}</text>
+		<text selectable='true' bindlongtap='copy' data-name="address" wx:if="{{ detail_data.hold_mode == 2 }}">{{ detail_data.city }} {{ detail_data.address }}</text>
 	</view>
 
 	<view class="date_or_text" wx:if="{{ detail_data.url }}">
 		<image src="../../images/icon/url.png" class="iconfont"></image>
-		<text>{{ detail_data.url }}</text>
+		<text selectable='true' bindlongtap='copy' data-name="url">{{ detail_data.url }}</text>
 		<!-- <image src="../../images/icon/copy.png" class="copy" bindtap="copyUrl"></image> -->
 	</view>
 
@@ -42,91 +42,101 @@
 	</view>
 </view>
 
-<view class="content">
-	<view class="body">
-		<view class="company-box">
-      <view class="company_logo fl">
-        <image src="{{ detail_data.organize.pic }}"></image>
-      </view>
-      <view class="company_info fr">
-        <view class="company_name">
-          <text>{{ detail_data.organize.name }}</text>
-        </view>
-        <view class="company_desc">
-          <text>{{ detail_data.organize.desc }}</text>
-        </view>
-        <view class="company_other">
-          <text>粉丝  {{ detail_data.organize.fans }}</text>
-          <text>活动  {{ detail_data.organize.activity_num }}</text>
-        </view>
-      </view>
-    </view>
+<view class="contenter">
 
-    <view class='company_operation'>
-        <van-row>
-          <van-col span="12">
-							
-            <van-button wx:if="{{ detail_data.attention }}" bindtap="attention" custom-class="company_button" round plain icon="star-o" size="small" type="primary">已关注</van-button>
-            <van-button wx:else custom-class="company_button" bindtap="attention"  round plain icon="star-o" size="small" type="primary">关注</van-button>
+	<view class="content">
+		<view class="body">
+			<view class="company-box">
+				<view class="company_logo fl">
+					<image src="{{ detail_data.organize.pic }}"></image>
+				</view>
+				<view class="company_info fr">
+					<view class="company_name">
+						<text>{{ detail_data.organize.name }}</text>
+					</view>
+					<view class="company_desc">
+						<text>{{ detail_data.organize.desc }}</text>
+					</view>
+					<view class="company_other">
+						<text>粉丝  {{ detail_data.organize.fans }}</text>
+						<text>活动  {{ detail_data.organize.activity_num }}</text>
+					</view>
+				</view>
+			</view>
 
-          </van-col>
-          <van-col span="12">
-            <van-button bind:click="organize" custom-class="company_button" round plain size="small" type="primary">主办方小站</van-button>
-          </van-col>
-        </van-row>
-    </view>
+			<view class='company_operation'>
+					<van-row>
+						<van-col span="12">
+								
+							<van-button wx:if="{{ detail_data.attention }}" bindtap="attention" custom-class="company_button" round plain icon="star-o" size="small" type="primary">已关注</van-button>
+							<van-button wx:else custom-class="company_button" bindtap="attention"  round plain icon="star-o" size="small" type="primary">关注</van-button>
+
+						</van-col>
+						<van-col span="12">
+							<van-button bind:click="organize" custom-class="company_button" round plain size="small" type="primary">主办方小站</van-button>
+						</van-col>
+					</van-row>
+			</view>
+		</view>
+
 	</view>
 
-</view>
+	<view class="content" wx:if="{{ detail_data.organ_infor }}">
+		<view class="subtit">
+			<text>组织信息</text>
+		</view>
+		<view class="body">
+			<rich-text class="neirong" nodes="{{detail_data.organ_infor || '--'}}"></rich-text>
+		</view>
+	</view>
 
-<view class="content" wx:if="{{ detail_data.organ_infor }}">
-	<view class="subtit">
-		<text>组织信息</text>
+	<view class="content" wx:if="{{ detail_data.content }}">
+		<view class="subtit">
+			<text>活动详情</text>
+		</view>
+		<view class="body">
+			<rich-text class="neirong" nodes="{{detail_data.content || '--'}}"></rich-text>
+		</view>
 	</view>
-	<view class="body">
-		<rich-text class="neirong" nodes="{{detail_data.organ_infor || '--'}}"></rich-text>
-	</view>
-</view>
 
-<view class="content" wx:if="{{ detail_data.content }}">
-	<view class="subtit">
-		<text>活动详情</text>
+	<view wx:if="{{ detail_data.share_img.length > 0 }}" class="content">
+		<view class="subtit">
+			<text>活动图片</text>
+		</view>
+		<view class="body">
+			<image src="{{ detail_data.share_img }}" bindload="realImageLoad" bindtap='imgShow' style="width:{{ image.width }}rpx; height:{{ image.height }}rpx;" />
+		</view>
 	</view>
-	<view class="body">
-		<rich-text class="neirong" nodes="{{detail_data.content || '--'}}"></rich-text>
-	</view>
-</view>
 
-<view wx:if="{{ detail_data.share_img.length > 0 }}" class="content">
-	<view class="subtit">
-		<text>活动图片</text>
+	<view class="content" wx:if="{{ detail_data.content }}">
+		<view class="subtit">
+			<text>直播信息</text>
+		</view>
+		<view class="body">
+			富文本
+		</view>
 	</view>
-	<view class="body">
-		<image src="{{ detail_data.share_img }}" bindload="realImageLoad" bindtap='imgShow' style="width:{{ image.width }}rpx; height:{{ image.height }}rpx;" />
+	<view class="content" wx:if="{{ detail_data.content }}">
+		<view class="subtit">
+			<text>收费信息</text>
+		</view>
+		<view class="body">
+			后台编辑
+		</view>
 	</view>
-</view>
 
-<view class="content" wx:if="{{ detail_data.content }}">
-	<view class="subtit">
-		<text>直播信息</text>
+	<view class="content">
+		<view class="body">
+			<van-button type="primary" color="linear-gradient(to right, #4bb0ff, #6149f6)" block>想参加</van-button>
+		</view>
 	</view>
-	<view class="body">
-		富文本
-	</view>
-</view>
-<view class="content" wx:if="{{ detail_data.content }}">
-	<view class="subtit">
-		<text>收费信息</text>
-	</view>
-	<view class="body">
-		后台编辑
-	</view>
-</view>
 
-<view class="content">
-	<view class="body">
-		<van-button type="primary" color="linear-gradient(to right, #4bb0ff, #6149f6)" block>想参加</van-button>
+	<view class="content">
+		<view class="instructions">
+			{{ detail_data.instructions }}
+		</view>
 	</view>
+
 </view>
 
 <view class="bottom">
