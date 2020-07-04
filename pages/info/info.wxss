@@ -1,0 +1,32 @@
+/* pages/info/info.wxss */
+.dropdown {
+  height: 88rpx;
+}
+
+.dropdown .industry {
+  padding: 18rpx 0;
+  margin-left: 17rpx;
+  border-bottom: 1px solid rgb(242, 244, 245);
+}
+
+.dropdown .industry-title {
+  color: #333;
+  width: 91px;
+  font-size: 28rpx;
+  display: inline-block;
+  padding-left: 2rpx;
+}
+
+.dropdown .industry-value{
+  font-size: 28rpx;
+  color: rgb(204, 205, 208);
+}
+
+.red {
+  font-size: 28rpx;
+  color: rgb(216, 48, 48);
+}
+
+.submit_btn {
+  margin-top: 20px;
+}

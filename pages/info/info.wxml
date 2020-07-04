@@ -1,0 +1,21 @@
+	<van-cell-group>
+		<van-field label="姓名" required clearable value="{{ value }}" placeholder="请输入姓名" bind:change="onChange" />
+		<van-field label="手机号" required clearable value="{{ value }}" placeholder="请输入手机号" bind:change="onChange" />
+		<van-field label="邮箱" required clearable value="{{ value }}" placeholder="请输入邮箱" bind:change="onChange" />
+
+		<view class="dropdown">
+			<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+				<view class="industry">
+					<text class="red">*</text><text class="industry-title">行业</text>
+					<text class="industry-value" style="color: {{ industryColor }}">{{array[index]}}</text>
+				</view>
+			</picker>
+		</view>
+
+		<van-field label="职务" title="职务" clearable value="{{ value }}" placeholder="请输入职务" bind:change="onChange" />
+		<van-field label="备注" title="备注" clearable value="{{ value }}" placeholder="请输入备注" bind:change="onChange" />
+	</van-cell-group>
+
+	<view class="container submit_btn">
+		<van-button round color="#87CEFA" block>保 存</van-button>
+	</view>

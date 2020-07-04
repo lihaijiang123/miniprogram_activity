@@ -9,7 +9,7 @@
 	</view>
 
 	<view class="p">
-		<text space="emsp">浏览：{{ detail_data.see_num }} 收藏：{{ detail_data.cang_num }} 想参加: 20 已参加: 12</text>
+		<text space="emsp">浏览：{{ detail_data.see_num }} 收藏：{{ detail_data.cang_num }} 想参加: {{ detail_data.join_num }} 已参加: 等待</text>
 	</view>
 
 	<view class="money" wx:if="{{ pay_mode == 1 }}">
@@ -127,7 +127,9 @@
 
 	<view class="content">
 		<view class="body">
-			<van-button type="primary" color="linear-gradient(to right, #4bb0ff, #6149f6)" block>想参加</van-button>
+			<van-button type="primary" wx:if="{{ detail_data.join }}" bindtap="wantJoin" color="linear-gradient(to right, #4bb0ff, #6149f6)" block>已参加</van-button>
+
+			<van-button type="primary" wx:else bindtap="wantJoin" color="linear-gradient(to right, #4bb0ff, #6149f6)" block>想参加</van-button>
 		</view>
 	</view>
 
@@ -152,13 +154,12 @@
 		<image src="../../images/icon/sc.png" class="iconfont"></image>
 		<text>收藏</text>
 	</view>
-	<view class="home" bindtap="cang">
+	<button class="home" open-type='share'>
 		<image src="../../images/icon/fx.png" class="iconfont"></image>
 		<text>分享</text>
-	</view>
+	</button>
 
-
-	<button open-type='share' class="baoming">报名</button>
+	<button class="baoming fr">报 名</button>
 
 </view>
 <view class="bottom-box"></view>

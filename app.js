@@ -43,6 +43,6 @@ App({
 		defaultCity: '',
 		defaultCounty: '',
 
-		dev_api: 'https://relclothing.fuyouhome.top',
+		dev_api: 'http://relclothing.fuyouhome.top',
     }
 })

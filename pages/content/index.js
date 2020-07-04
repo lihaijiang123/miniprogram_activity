@@ -107,11 +107,6 @@ Page({
 
 	// 主办方列表页
 	organize: function () {
-
-		console.log(this.data.organize_id);
-		console.log(this.data.detail_data.organize.name);
-		console.log('-----')
-
 		wx.navigateTo({
 			url: '/pages/organize/list/index?organize_id=' + this.data.organize_id + '&name=' + this.data.detail_data.organize.name
 		})

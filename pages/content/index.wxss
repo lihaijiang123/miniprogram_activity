@@ -40,6 +40,7 @@
 .date_or_text {
     width: 686rpx;
     margin: 0 auto 10rpx;
+    overflow: hidden;
 }
 
 .date_or_text image {
@@ -53,6 +54,10 @@
     display: inline-block;
     vertical-align: middle;
     color: #707070;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 600rpx;
+    white-space: nowrap;
 }
 
 .top-box {
@@ -110,6 +115,7 @@
     position: fixed;
     left: 0;
     bottom: 0;
+    z-index: 999;
 }
 
 .bottom > .home {
@@ -117,6 +123,8 @@
     text-align: center;
     display: inline-block;
     vertical-align: middle;
+    background: #fff;
+    line-height: 1;    
 }
 
 
@@ -150,11 +158,9 @@
     vertical-align: middle;
     text-align: center;
     line-height: 80rpx;
-    font-size: 30rpx;
-    border-radius: 50rpx;
-    margin-left: 15%;
+    font-size: 50rpx;
+    border-radius: 30rpx;
     color: #fff;
-    float: right;
 }
 
 .bottom .home .on {
