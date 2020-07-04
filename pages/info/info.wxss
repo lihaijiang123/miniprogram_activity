@@ -12,13 +12,13 @@
 .dropdown .industry-title {
   color: #333;
   width: 91px;
-  font-size: 28rpx;
+  font-size: 14px;
   display: inline-block;
-  padding-left: 2rpx;
+  padding-left: 2px;
 }
 
 .dropdown .industry-value{
-  font-size: 28rpx;
+  font-size: 14px;
   color: rgb(204, 205, 208);
 }
 
