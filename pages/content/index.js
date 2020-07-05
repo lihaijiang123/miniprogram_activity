@@ -149,9 +149,11 @@ Page({
 				})
 			}
 		})
+
 		this.setData({
 			id: options.id
 		})
+
 	},
 
 	imgShow: function (event) {
@@ -162,6 +164,14 @@ Page({
 		wx.previewImage({
 			current: src, // 当前显示图片的http链接
 			urls: imgList // 需要预览的图片http链接列表
+		})
+	},
+
+
+	submit: function() {
+		let that = this;
+		wx.navigateTo({
+			url: '/pages/info/info?id=' + that.data.id
 		})
 	},
 

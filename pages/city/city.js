@@ -20,6 +20,7 @@ Page({
 		winHeight: 0,
 		cityList: [],
 		hotCityList: HOT_CITY_LIST,
+		hotCountryList: [{ cityCode: 110000, city: '美国' }, { cityCode: 310000, city: '日本' }, { cityCode: 440100, city: '英国' }, { cityCode: 440300, city: '马来西亚' }, { cityCode: 310000, city: '日本' }, { cityCode: 440100, city: '英国' }, { cityCode: 440300, city: '马来西亚' }, { cityCode: 310000, city: '日本' }, { cityCode: 440100, city: '英国' }, { cityCode: 440300, city: '马来西亚' }],
 		showChosenLetterToast: false,
 		scrollTop: 0,//置顶高度
 		scrollTopId: '',//置顶id

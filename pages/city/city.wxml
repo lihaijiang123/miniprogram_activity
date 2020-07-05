@@ -49,7 +49,20 @@
                         </view>
                     </view>
                 </view>
+
+                <view class="hotcity-common">热门国家</view>
+
+                <view class="hot-city" wx:key="initial">
+                    <view wx:for="{{hotCountryList}}" wx:key="cityCode">
+                        <view class="weui-grid" data-code="{{item.cityCode}}" data-city="{{item.city}}" bindtap="chooseCity">
+                            <view class="weui-grid-label">{{item.city}}</view>
+                        </view>
+                    </view>
+                </view>
+
             </view>
+            
+
 
             <view class="selection" wx:for="{{cityList}}" wx:key="initial">
                 <view class="item-letter" id="{{item.initial}}">{{item.initial}}</view>

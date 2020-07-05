@@ -1,6 +1,5 @@
 {
 	"pages": [
-		"pages/info/info",
 		"pages/index/index",
 		"pages/all_activity/index",
 		"pages/my/index",
@@ -10,7 +9,9 @@
 		"pages/list/index",
 		"pages/help/help",
 		"pages/organize/list/index",
-		"pages/organize/detail/index"
+		"pages/organize/detail/index",
+		"pages/info/info",
+		"pages/feedback/index"
 	],
 
 	"usingComponents": {

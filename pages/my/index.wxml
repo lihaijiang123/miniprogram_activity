@@ -38,6 +38,10 @@
             <image class='lefts fl' src='../../images/icon/phone.png' style="width:34rpx;height:34rpx;"></image>
             <view class='dingdan fl'>客服与帮助</view>
         </view>
+        <view class='tabs clearfix' bindtap="feedback">
+            <image class='lefts fl' src='../../images/icon/phone.png' style="width:34rpx;height:34rpx;"></image>
+            <view class='dingdan fl'>建议与反馈</view>
+        </view>
         <view class='tabs clearfix' bindtap="addMine">
             <image class='lefts fl' src='../../images/icon/save.png' style="width:34rpx;height:34rpx;"></image>
             <view class='dingdan fl'>添加到我的小程序</view>

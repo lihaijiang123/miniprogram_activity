@@ -9,7 +9,7 @@
 	</view>
 
 	<view class="p">
-		<text space="emsp">浏览：{{ detail_data.see_num }} 收藏：{{ detail_data.cang_num }} 想参加: {{ detail_data.join_num }} 已参加: 等待</text>
+		<text space="emsp">浏览：{{ detail_data.see_num }} 收藏：{{ detail_data.cang_num }} 想参加: {{ detail_data.join_num }} 已参加: {{ detail_data.sign_num }}</text>
 	</view>
 
 	<view class="money" wx:if="{{ pay_mode == 1 }}">
@@ -159,7 +159,7 @@
 		<text>分享</text>
 	</button>
 
-	<button class="baoming fr">报 名</button>
+	<button bindtap="submit" class="baoming fr">报 名</button>
 
 </view>
 <view class="bottom-box"></view>

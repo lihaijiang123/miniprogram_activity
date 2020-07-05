@@ -1,0 +1,15 @@
+<view class="container">
+	<form bindsubmit="formSubmit">
+		<view class="textare">
+			<textarea name="content" placeholder="限制50字符" maxlength="50" />
+			</view>
+      
+      <van-col custom-class='btn' span="24">
+        <van-button form-type="submit" color="#87CEFA" type="info" block>提 交</van-button>
+      </van-col>
+      <van-col custom-class='btn' span="24">
+        <van-button type="default" block>取 消</van-button>
+      </van-col>
+      
+  </form>
+</view>

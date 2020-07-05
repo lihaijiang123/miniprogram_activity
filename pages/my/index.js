@@ -13,6 +13,12 @@ Page({
     help: function() {
         wx.navigateTo({
           url: '/pages/help/help',
+        });
+    },
+
+    feedback: function() {
+        wx.navigateTo({
+            url: '/pages/feedback/index',
         })
     },
 

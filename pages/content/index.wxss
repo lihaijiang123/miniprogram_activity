@@ -158,7 +158,7 @@
     vertical-align: middle;
     text-align: center;
     line-height: 80rpx;
-    font-size: 50rpx;
+    font-size: 36rpx;
     border-radius: 30rpx;
     color: #fff;
 }
