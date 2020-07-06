@@ -15,7 +15,7 @@ App({
 				success: res => {
 					// 发送 res.code 到后台换取 openId, sessionKey, unionId
 					wx.request({
-						url: 'https://relclothing.fuyouhome.top/login',
+						url: 'https://www.3sworld.com/login',
 						data: {
 							code: res.code
 						},
@@ -43,6 +43,6 @@ App({
 		defaultCity: '',
 		defaultCounty: '',
 
-		dev_api: 'http://relclothing.fuyouhome.top',
+		dev_api: 'https://www.3sworld.com',
     }
 })
