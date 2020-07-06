@@ -1,82 +1,102 @@
 <view class="top-box">
-  <!-- 地区选择 && 搜索框 S -->
-  <view class="search-box clearfix">
-    <view class="fl" bindtap="goCity">
-      <image src="../../images/icon/wz.png"></image>
-      <text>{{location}}</text>
-    </view>
+	<!-- 地区选择 && 搜索框 S -->
+	<view class="search-box clearfix">
+		<view class="fl" bindtap="goCity">
+			<image src="../../images/icon/wz.png"></image>
+			<text>{{location}}</text>
+		</view>
 
-    <view class="fr" bindtap="goSearch">
-      <image src="../../images/icon/search.png"></image>
-      <text>搜索更多活动</text>
-    </view>
-  </view>
-  <!-- 地区选择 && 搜索框 E -->
+		<view class="fr" bindtap="goSearch">
+			<image src="../../images/icon/search.png"></image>
+			<text>搜索更多活动</text>
+		</view>
+	</view>
+	<!-- 地区选择 && 搜索框 E -->
 
-  <!-- 下拉 筛选 S -->
-  <van-dropdown-menu active-color="#87CEFA">
-    <van-dropdown-item bind:change="change" title="{{ title1 }}" value="{{ value }}" options="{{ option1 }}" />
-    <van-dropdown-item bind:change="change" title="{{ title2 }}" value="{{ value }}" options="{{ option2 }}" />
-    <van-dropdown-item bind:change="change" title="{{ title3 }}" value="{{ value }}" options="{{ option3 }}" />
-    <van-dropdown-item title="{{ title4 }}" id="item">
-    <van-row>
-      <text class="dropdown-title">关键词</text>
-    </van-row>
-    <van-row>
-      <van-col wx:for="{{ list_data.active_types }}" wx:key="index" custom-class="dropdown-col" span="6">
-        <van-button bind:click="dropdownClick" data-flag="type" data-id="{{ item.id }}"  custom-class="dropdown-btn" plain hairline color="#87CEFA" size="small">{{ item.title }}</van-button>
-      </van-col>
-    </van-row>
+	<!-- 下拉 筛选 S -->
+	<van-dropdown-menu active-color="#87CEFA">
+		<van-dropdown-item bind:change="change" title="{{ title1 }}" value="{{ value }}" options="{{ option1 }}" />
+		<van-dropdown-item bind:change="change" title="{{ title2 }}" value="{{ value }}" options="{{ option2 }}" />
+		<van-dropdown-item bind:change="change" title="{{ title3 }}" value="{{ value }}" options="{{ option3 }}" />
+		<van-dropdown-item title="{{ title4 }}" id="item">
+			<van-row>
+				<text class="dropdown-title">关键词</text>
+			</van-row>
+			<van-row>
+				<van-col wx:for="{{ list_data.active_types }}" wx:key="index" custom-class="dropdown-col" span="6">
 
-    <van-divider />
 
-    <van-row>
-      <text class="dropdown-title">活动类别</text>
-    </van-row>
-    <van-row>
-      <van-col wx:for="{{ list_data.active_category }}" wx:key="index" custom-class="dropdown-col" span="6">
-        <van-button bind:click="dropdownClick" data-flag="category" data-id="{{ item.id }}" custom-class="dropdown-btn" plain hairline color="#87CEFA" size="small">{{ item.title }}</van-button>
-      </van-col>
-    </van-row>
-    
-    </van-dropdown-item>
+					<block wx:if="{{item.id==typeClickId}}">
+						<van-button bind:click="dropdownClick" data-flag="type" data-id="{{ item.id }}" custom-class="dropdown-btn" hairline color="#87CEFA" size="small">{{ item.title }}</van-button>
+					</block>
 
-  </van-dropdown-menu>
-  <!-- 下拉 筛选 E -->
+					<block wx:else>
+						<van-button bind:click="dropdownClick" data-flag="type" data-id="{{ item.id }}" custom-class="dropdown-btn" plain hairline color="#87CEFA" size="small">{{ item.title }}</van-button>
+					</block>
+
+
+				</van-col>
+			</van-row>
+
+			<van-divider />
+
+			<van-row>
+				<text class="dropdown-title">活动类别</text>
+			</van-row>
+			<van-row>
+				<van-col wx:for="{{ list_data.active_category }}" wx:key="index" custom-class="dropdown-col" span="6">
+
+
+          <block wx:if="{{item.id==categoryClickId}}">
+						<van-button bind:click="dropdownClick" data-flag="category" data-id="{{ item.id }}" custom-class="dropdown-btn" hairline color="#87CEFA" size="small">{{ item.title }}</van-button>
+					</block>
+
+					<block wx:else>
+						<van-button bind:click="dropdownClick" data-flag="category" data-id="{{ item.id }}" custom-class="dropdown-btn" plain hairline color="#87CEFA" size="small">{{ item.title }}</van-button>
+					</block>
+
+
+				</van-col>
+			</van-row>
+
+		</van-dropdown-item>
+
+	</van-dropdown-menu>
+	<!-- 下拉 筛选 E -->
 </view>
 
 <!-- 产品 S -->
 <view class="pro" wx:if="{{ !no }}">
-  <view class="product-box clearfix" wx:for="{{ list_data.active_list }}" wx:key="index" bindtap="goDetail" data-id="{{ item.id }}">
-    <view class="product-imgbox fl">
-      <image mode="aspectFill" src="{{ item.pic }}"></image>
-      <text class="flag">已认证</text>
-    </view>
-    <view class="product-contentbox fr">
-      <text class="title">{{ item.title }}</text>
-      <view class="diqu">
-        <image class="time" src="../../images/icon/date.png"></image>
-        <text>{{ item.begin_time }}</text>
-      </view>
-      <view class="diqu">
-        <view class="fl">
-          <image src="../../images/icon/wz.png"></image>
-          <text wx:if="{{ item.hold_mode == 1 }}">线上活动</text>
-          <text wx:if="{{ item.hold_mode == 2 }}">{{ item.city }}</text>
-        </view>
-        <view class="fr theme-color">
-          <text wx:if="{{ item.price > 0 }}">{{ item.currency }}{{ item.price }}起</text>
-          <text wx:else>免费</text>
-        </view>
-      </view>
-      
-    </view>
+	<view class="product-box clearfix" wx:for="{{ list_data.active_list }}" wx:key="index" bindtap="goDetail" data-id="{{ item.id }}">
+		<view class="product-imgbox fl">
+			<image mode="aspectFill" src="{{ item.pic }}"></image>
+			<text class="flag">已认证</text>
+		</view>
+		<view class="product-contentbox fr">
+			<text class="title">{{ item.title }}</text>
+			<view class="diqu">
+				<image class="time" src="../../images/icon/date.png"></image>
+				<text>{{ item.begin_time }}</text>
+			</view>
+			<view class="diqu">
+				<view class="fl">
+					<image src="../../images/icon/wz.png"></image>
+					<text wx:if="{{ item.hold_mode == 1 }}">线上活动</text>
+					<text wx:if="{{ item.hold_mode == 2 }}">{{ item.city }}</text>
+				</view>
+				<view class="fr theme-color">
+					<text wx:if="{{ item.price > 0 }}">{{ item.currency }}{{ item.price }}起</text>
+					<text wx:else>免费</text>
+				</view>
+			</view>
 
-    <view class="label fl">
-        <text wx:if="{{ item.serve_category_id }}">{{ item.serve_category_id }}</text>
-        <text wx:for="{{ item.serve_type }}" wx:key="index">{{ item }}</text>
-      </view>
-  </view>
+		</view>
+
+		<view class="label fl">
+			<text wx:if="{{ item.serve_category_id }}">{{ item.serve_category_id }}</text>
+			<text wx:for="{{ item.serve_type }}" wx:key="index">{{ item }}</text>
+		</view>
+	</view>
 </view>
 <view class="no" wx:if="{{ no }}">没有符此条件的活动</view>
 <!-- 产品 E -->

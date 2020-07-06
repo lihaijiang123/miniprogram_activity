@@ -22,7 +22,11 @@ Page({
 		hold_mode: '',
 
 		no: false,
-		
+
+		categoryClickId: -1,
+		typeClickId: -1,
+
+
 		// title
 		title1: '时间',
 		title2: '综合排序',
@@ -31,37 +35,38 @@ Page({
 		//default value
 		value: 0,
 
-		
+
 		// option
 		option1: [
-      { text: '全部', value: '1' },
-      { text: '今天', value: '2' },
+			{ text: '全部', value: '1' },
+			{ text: '今天', value: '2' },
 			{ text: '明天', value: '3' },
-      { text: '本周', value: '4' },
-      { text: '本月', value: '5' },
-      { text: '本年', value: '6' },
-      { text: '明年及以后', value: '7' },
-      { text: '已结束', value: '8' },
-    ],
-    option2: [
-      { text: '最多浏览', value: '101' },
-      { text: '最多收藏', value: '102' },
+			{ text: '本周', value: '4' },
+			{ text: '本月', value: '5' },
+			{ text: '本年', value: '6' },
+			{ text: '明年及以后', value: '7' },
+			{ text: '已结束', value: '8' },
+		],
+		option2: [
+			{ text: '最多浏览', value: '101' },
+			{ text: '最多收藏', value: '102' },
 			{ text: '最多分享', value: '103' },
 			{ text: '最新发布', value: '104' },
 		],
 		option3: [
-      { text: '全部', value: '201' },
-      { text: '免费', value: '202' },
-      { text: '收费', value: '203' },
+			{ text: '全部', value: '201' },
+			{ text: '免费', value: '202' },
+			{ text: '收费', value: '203' },
 		],
-	
+
 
 	},
 
 	// 下拉框前三个
-	change: function({detail}) {
+	change: function ({ detail }) {
 		let url = app.globalData.dev_api;
 		let that = this;
+		console.log(detail)
 		wx.request({
 			url: url + '/test',
 			data: {
@@ -78,6 +83,7 @@ Page({
 				that.setData({
 					list_data: data,
 					value: detail,
+					page: 1,
 				})
 
 				that.gotop()
@@ -87,15 +93,30 @@ Page({
 	},
 
 	// 下拉框最后一个
-	dropdownClick: function(event) {
+	dropdownClick: function (event) {
 		let that = this;
 		let url = app.globalData.dev_api;
 		let flag = event.currentTarget.dataset.flag;
 		let id = event.currentTarget.dataset.id;
+
+		if (flag == 'category' && id != that.data.categoryClickId) {
+			this.setData({
+				categoryClickId: id,
+				typeClickId: -1
+			})
+		}
+
+		if (flag == 'type' && id != that.data.typeClickId) {
+			this.setData({
+				typeClickId: id,
+				categoryClickId: -1
+			})
+		}
+
 		let detail = flag + '-' + id;
 
 		this.selectComponent('#item').toggle();
-		
+
 		wx.request({
 			url: url + '/test',
 			data: {
@@ -121,7 +142,7 @@ Page({
 	},
 
 	// 回到最顶部
-	gotop: function(){
+	gotop: function () {
 		wx.pageScrollTo({
 			scrollTop: 0
 		})
@@ -197,7 +218,7 @@ Page({
 			} else {
 				that.pageInit();
 			}
-		}else {
+		} else {
 			if (is_city == 1) {
 				//调用获取城市接口
 				wx.request({
@@ -218,7 +239,7 @@ Page({
 						}
 					}
 				})
-			}else if (is_city == 2) {
+			} else if (is_city == 2) {
 				if (!wx.getStorageSync('user_id')) {
 					app.getOpenid().then(function (res) {
 						that.pageInit();
@@ -241,7 +262,7 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-		
+
 	},
 
 	/**
@@ -271,8 +292,10 @@ Page({
 	onReachBottom: function () {
 		let url = app.globalData.dev_api;
 		let page = this.data.page;
-		
+
 		let that = this;
+
+		console.log(that.data.value)
 		page++
 		wx.request({
 			url: url + '/test',
@@ -281,7 +304,7 @@ Page({
 				city: that.data.city,
 				page: page,
 				type: 'list',
-				flag: that.value
+				flag: that.data.value
 			},
 			success: function (res) {
 				if (res.data.data.active_list.length <= 0) {
@@ -289,7 +312,7 @@ Page({
 						title: '已加载全部',
 						icon: 'none'
 					})
-				}else {
+				} else {
 					let list = that.data.list_data.active_list;
 					res.data.data.active_list.forEach(item => {
 						item.serve_type = item.serve_type.split(',')

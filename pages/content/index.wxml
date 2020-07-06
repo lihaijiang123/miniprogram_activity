@@ -21,7 +21,7 @@
 
 	<view class="date_or_text">
 		<image src="../../images/icon/date.png" class="iconfont"></image>
-		<text>{{ detail_data.begin_time }} 至 {{ detail_data.end_time }}</text>
+		<text>{{ detail_data.begin_time }}</text>
 	</view>
 
 	<view class="date_or_text">
@@ -95,7 +95,7 @@
 			<text>活动详情</text>
 		</view>
 		<view class="body">
-			<rich-text class="neirong" nodes="{{detail_data.content || '--'}}"></rich-text>
+			<rich-text class="neirong" nodes="{{detail_data.content || ' '}}"></rich-text>
 		</view>
 	</view>
 
@@ -108,28 +108,28 @@
 		</view>
 	</view>
 
-	<view class="content" wx:if="{{ detail_data.content }}">
+	<view class="content" wx:if="{{ detail_data.live }}">
 		<view class="subtit">
 			<text>直播信息</text>
 		</view>
 		<view class="body">
-			富文本
+			<rich-text class="neirong" nodes="{{detail_data.live || ' '}}"></rich-text>
 		</view>
 	</view>
-	<view class="content" wx:if="{{ detail_data.content }}">
+	<view class="content" wx:if="{{ detail_data.charge }}">
 		<view class="subtit">
 			<text>收费信息</text>
 		</view>
 		<view class="body">
-			后台编辑
+			<rich-text class="neirong" nodes="{{detail_data.charge || ' '}}"></rich-text>
 		</view>
 	</view>
 
 	<view class="content">
 		<view class="body">
-			<van-button type="primary" wx:if="{{ detail_data.join }}" bindtap="wantJoin" color="linear-gradient(to right, #4bb0ff, #6149f6)" block>已参加</van-button>
+			<van-button type="primary" wx:if="{{ detail_data.join }}" bindtap="wantJoin" color="linear-gradient(to right, #4bb0ff, #6149f6)" block>想参加\已参加</van-button>
 
-			<van-button type="primary" wx:else bindtap="wantJoin" color="linear-gradient(to right, #4bb0ff, #6149f6)" block>想参加</van-button>
+			<van-button type="primary" wx:else bindtap="wantJoin" color="linear-gradient(to right, #4bb0ff, #6149f6)" block>想参加\已参加</van-button>
 		</view>
 	</view>
 
