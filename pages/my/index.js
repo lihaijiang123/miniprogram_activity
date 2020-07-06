@@ -25,14 +25,6 @@ Page({
 	// goList
 	goList: function (e) {
         let url = e.currentTarget.dataset.url;
-        
-        if (url == 'join_list') {
-            wx.showToast({
-                icon: 'none',
-                title: '功能开发中',
-            })
-            return false;
-        }
 		wx.navigateTo({
 			url: '/pages/list/index?type=' + url,
 		})

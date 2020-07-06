@@ -127,8 +127,6 @@ Page({
             //获取地理位置成功时
             success: function(res) {
                 let city = wx.getStorageSync('city');
-                console.log(city);
-
                 if (false ||city && city != '请选择') {
                     that.setData({
                         location: city,

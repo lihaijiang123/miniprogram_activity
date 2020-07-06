@@ -21,42 +21,6 @@ scroll-view {
     padding-left: 16rpx;
 }
 
-.side-bar-letter-list {
-    flex-shrink: 0;
-    width: 80rpx;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    color: #666;
-}
-
-.side-bar-letter-list view {
-    margin-top: 20rpx;
-}
-
-.touch-class {
-    background-color: #fff;
-    color: #fff;
-    padding-top: 16rpx;
-    padding-bottom: 16rpx;
-}
-
-.show-chosen-letter {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin: -100rpx;
-    width: 200rpx;
-    height: 200rpx;
-    border-radius: 20rpx;
-    font-size: 52rpx;
-    z-index: 1;
-}
 
 .selection {
     display: flex;
@@ -65,26 +29,9 @@ scroll-view {
     margin-top: 10rpx;
 }
 
-.city-picker {
-    padding: 16rpx 0 16rpx 16rpx;
-    margin-bottom: -10rpx;
-}
 
-.county-picker {
-    padding-left: 20rpx;
-    margin-bottom: 10rpx;
-}
-
-.county-picker-title {
-    font-size: 24rpx;
-    color: #666;
-    padding-bottom: 0;
-    margin: 8rpx 0;
-    padding-left: 4px;
-}
 
 .hot-city {
-    margin-bottom: -10rpx;
     display: flex;
     flex-wrap: wrap;
 }
@@ -113,50 +60,19 @@ scroll-view {
 .hotcity-common {
     font-size: 24rpx;
     color: #666;
-    padding-bottom: 0;
-    margin: 8rpx 0;
-    margin-left: 16rpx;
-}
-
-.county-picker-list {
-    padding-right: 50rpx;
-    margin: auto;
-}
-
-.current-city {
+    margin: 40rpx 10rpx 15rpx 8rpx;
     display: inline-block;
-    border: 1rpx solid #87CEFA;
-    border-radius: 8rpx;
-    padding: 10rpx;
-    font-size: 24rpx;
-    color: #87CEFA;
-    text-align: center;
-    min-width: 149.5rpx;
-    margin: 16rpx;
 }
 
-.side-bar-hot-city {
-    color: #87CEFA;
-    font-size: 20rpx;
-    margin: 0 !important;
-}
-
-.slectCity {
-    border-color: #87CEFA !important;
-}
-
-.slectCity view {
-    color: #87CEFA !important;
-}
 
 .weui-grid {
     padding: 10rpx 0;
-    width: 200rpx;
+    width: 234rpx;
     box-sizing: border-box;
     border: 1rpx solid #ececec;
     border-radius: 8rpx;
     background-color: white;
-    margin: 8rpx 0 8rpx 8rpx;
+    margin: 4rpx;
 }
 
 .weui-grids {
@@ -195,11 +111,6 @@ input {
 .input {
     padding: 16rpx;
     border-bottom: 1rpx solid #f1f1f1;
-}
-
-.county {
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .showFlag {
@@ -258,3 +169,4 @@ input {
 .showFlag button:not([size='mini']) {
 	width: 200rpx;
 }
+
