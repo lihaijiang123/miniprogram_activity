@@ -1,17 +1,34 @@
 <view class="container-inner">
 	<view class="container">
 		<view class="">
+
 			<view>
-				<view class="hotcity-common" bindtap="reGetLocation">点击定位城区</view>
+				<view class="hotcity-common" bindtap="reGetLocation">当前定位城市</view>
 				<view class="hot-city">
 					<view class="weui-grid" bindtap="reGetLocation" data-city="{{city}}" data-code="{{currentCityCode}}" data-county="{{county}}">
 						<view class="weui-grid-label">{{city}}</view>
 					</view>
-					<view class="weui-grid" bindtap="getLocationAll" data-city="全国">
-						<view class="weui-grid-label">全国</view>
-					</view>
+
 				</view>
 			</view>
+		
+			<view>
+				<view class="hotcity-common"></view>
+
+				<view class="hot-city">
+					<view class="weui-grid" bindtap="getLocationAll" data-city="全球">
+						<view class="weui-grid-label">全球</view>
+					</view>
+					<view class="weui-grid" bindtap="getLocationAll" data-city="国内">
+						<view class="weui-grid-label">国内</view>
+					</view>
+					<view class="weui-grid" bindtap="getLocationAll" data-city="国外">
+						<view class="weui-grid-label">国外</view>
+					</view>
+				</view>
+
+			</view>
+
 			<view>
 				<view class="hotcity-common">热门城市</view>
 				<view class="hotcity-common fr theme-color" bindtap="showPopup">更多城市 ></view>

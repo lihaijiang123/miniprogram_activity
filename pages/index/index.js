@@ -38,21 +38,21 @@ Page({
     },
 
     // goCity
-    goCity: function() {
+    goCity: function () {
         wx.navigateTo({
             url: '/pages/city/city?type=1',
         })
     },
 
     // goSearch
-    goSearch: function() {
+    goSearch: function () {
         wx.navigateTo({
-            url: '/pages/search/index',
+            url: '/pages/search/index?type=index',
         })
     },
 
     // setTabIndex
-    setTabIndex: function(e) {
+    setTabIndex: function (e) {
         let index = e.currentTarget.dataset.index;
         let id = e.currentTarget.dataset.id;
         this.setData({
@@ -69,7 +69,7 @@ Page({
     },
 
     // goDetail
-    goDetail: function(e) {
+    goDetail: function (e) {
         let id = e.currentTarget.dataset.id;
         wx.navigateTo({
             url: '/pages/content/index?id=' + id,
@@ -77,19 +77,20 @@ Page({
     },
 
     // pageInit
-    pageInit: function() {
+    pageInit: function () {
         let url = app.globalData.dev_api;
         let that = this;
         wx.request({
             url: url + '/test',
             data: {
                 userId: wx.getStorageSync('user_id'),
-				type: 'index',
+                type: 'index',
                 // page: page,
                 city: that.data.city,
                 serve_type_id: that.data.type_id
             },
-            success: function(res) {
+            success: function (res) {
+                console.log(res)
                 if (res.data.code == -2) {
                     app.getOpenid().then(res => {
                         that.pageInit();
@@ -119,21 +120,21 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function(options) {
+    onLoad: function (options) {
         let that = this;
 
         wx.getLocation({
             // type: 'wgs84', //返回可以用于wx.openLocation的经纬度
             //获取地理位置成功时
-            success: function(res) {
+            success: function (res) {
                 let city = wx.getStorageSync('city');
-                if (false ||city && city != '请选择') {
+                if (false || city && city != '请选择') {
                     that.setData({
                         location: city,
                         city: city
                     })
                     if (!wx.getStorageSync('user_id')) {
-                        app.getOpenid().then(function(res) {
+                        app.getOpenid().then(function (res) {
                             that.pageInit();
                         });
                     } else {
@@ -151,7 +152,7 @@ Page({
                             wx.setStorageSync('is_city', 1);
                             wx.setStorageSync('city', res.data.result.ad_info.city);
                             if (!wx.getStorageSync('user_id')) {
-                                app.getOpenid().then(function(res) {
+                                app.getOpenid().then(function (res) {
                                     that.pageInit();
                                 });
                             } else {
@@ -162,7 +163,7 @@ Page({
                 }
             },
             //获取地理位置失败(用户点击不允许)时执行
-            fail: function(err) {
+            fail: function (err) {
                 let is_city = wx.getStorageSync('is_city') || false;
                 let city_default = wx.getStorageSync('city');
                 that.setData({
@@ -180,21 +181,21 @@ Page({
                         location: city,
                     })
                     if (!wx.getStorageSync('user_id')) {
-                        app.getOpenid().then(function(res) {
+                        app.getOpenid().then(function (res) {
                             that.pageInit();
                         });
                     } else {
                         that.pageInit();
                     }
                 } else {
-					let city = wx.getStorageSync('city');
-					if (city != '请选择') {
-						that.setData({
-							city: city
-						})
-					}
+                    let city = wx.getStorageSync('city');
+                    if (city != '请选择') {
+                        that.setData({
+                            city: city
+                        })
+                    }
                     if (!wx.getStorageSync('user_id')) {
-                        app.getOpenid().then(function(res) {
+                        app.getOpenid().then(function (res) {
                             that.pageInit();
                         });
                     } else {
@@ -208,14 +209,14 @@ Page({
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function() {
+    onReady: function () {
 
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function() {
+    onShow: function () {
         // let city = wx.getStorageSync('city');
         // let is_city = wx.getStorageSync('is_city');
         // let that = this;
@@ -278,28 +279,28 @@ Page({
     /**
      * 生命周期函数--监听页面隐藏
      */
-    onHide: function() {
+    onHide: function () {
 
     },
 
     /**
      * 生命周期函数--监听页面卸载
      */
-    onUnload: function() {
+    onUnload: function () {
 
     },
 
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
-    onPullDownRefresh: function() {
+    onPullDownRefresh: function () {
 
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
-    onReachBottom: function() {
+    onReachBottom: function () {
         let url = app.globalData.dev_api;
         let that = this;
         let page = this.data.page;
@@ -308,12 +309,12 @@ Page({
             url: url + '/test',
             data: {
                 userId: wx.getStorageSync('user_id'),
-				type: 'index',
+                type: 'index',
                 page: page,
                 city: that.data.city,
                 serve_type_id: that.data.type_id
             },
-            success: function(res) {
+            success: function (res) {
                 if (res.data.data.active_list.length <= 0) {
                     wx.showToast({
                         title: '已加载全部',
@@ -340,7 +341,7 @@ Page({
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function() {
+    onShareAppMessage: function () {
 
     }
 })

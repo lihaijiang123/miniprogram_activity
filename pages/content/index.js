@@ -142,7 +142,19 @@ Page({
 				activity: options.id
 			},
 			success: function (res) {
-				res.data.data.content = res.data.data.content.replace(/\<img/g, '<img style="max-width:100%;height:auto;display:inline-block;"');
+				if (res.data.data.content != null) {
+					res.data.data.content = res.data.data.content.replace(/\<img/g, '<img style="max-width:100%;height:auto;display:inline-block;"');
+				}
+				if (res.data.data.live != null) {
+
+					res.data.data.live = res.data.data.live.replace(/\<img/g, '<img style="max-width:100%;height:auto;display:inline-block;"');
+				}
+
+				if (res.data.data.charge != null) {
+
+					res.data.data.charge = res.data.data.charge.replace(/\<img/g, '<img style="max-width:100%;height:auto;display:inline-block;"');
+
+				}
 				that.setData({
 					detail_data: res.data.data,
 					organize_id: res.data.data.organize_id
@@ -168,7 +180,7 @@ Page({
 	},
 
 
-	submit: function() {
+	submit: function () {
 		let that = this;
 		wx.navigateTo({
 			url: '/pages/info/info?id=' + that.data.id

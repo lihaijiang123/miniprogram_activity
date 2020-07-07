@@ -66,7 +66,6 @@ Page({
 	change: function ({ detail }) {
 		let url = app.globalData.dev_api;
 		let that = this;
-		console.log(detail)
 		wx.request({
 			url: url + '/test',
 			data: {
@@ -84,6 +83,9 @@ Page({
 					list_data: data,
 					value: detail,
 					page: 1,
+				typeClickId: -1,
+				categoryClickId: -1
+
 				})
 
 				that.gotop()
@@ -158,7 +160,7 @@ Page({
 	// goSearch
 	goSearch: function () {
 		wx.navigateTo({
-			url: '/pages/search/index',
+			url: '/pages/search/index?type=list',
 		})
 	},
 
@@ -202,6 +204,8 @@ Page({
 		let city = wx.getStorageSync('city');
 		let is_city = wx.getStorageSync('is_city');
 		let that = this;
+
+
 		if (city) {
 			this.setData({
 				location: city
@@ -262,7 +266,16 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-
+		// console.log('show')
+		// this.setData({
+		// 	typeClickId: -1,
+		// 	categoryClickId: -1
+		// })
+		this.selectComponent('#item1').toggle(false);
+		this.selectComponent('#item2').toggle(false);
+		this.selectComponent('#item3').toggle(false);
+		
+		this.selectComponent('#item').toggle(false);
 	},
 
 	/**
@@ -295,7 +308,6 @@ Page({
 
 		let that = this;
 
-		console.log(that.data.value)
 		page++
 		wx.request({
 			url: url + '/test',

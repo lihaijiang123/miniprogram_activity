@@ -162,7 +162,7 @@ scroll-view.headscroll view.active {
     width: 270rpx;
     height: 166rpx;
     display: block;
-    border-radius: 10rpx;
+    border-radius: 4rpx;
 }
 
 .product-box .product-contentbox {
@@ -208,7 +208,7 @@ scroll-view.headscroll view.active {
     top: 0;
     background: #87CEFA;
     color: #fff;
-    border-radius: 0 9rpx 9rpx 0;
+    border-radius: 4rpx 9rpx 9rpx 0;
     padding: 3rpx 10rpx 3rpx;
     font-size: 20rpx;
 }

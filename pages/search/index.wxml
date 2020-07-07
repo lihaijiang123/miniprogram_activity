@@ -21,33 +21,37 @@
 </view>
 
 <!-- 产品 S -->
-<view class="pro">
-    <view class="product-box clearfix"
-		wx:for="{{ list_data }}" wx:key="index" bindtap="goDetail" data-id="{{ item.id }}">
-        <image mode="aspectFill" src="{{ item.pic }}"></image>
-        <view>
-            <text class="title">{{ item.title }}</text>
-			<view class="diqu" wx:if="{{ item.hold_mode == 1 }}">
-				<image src="../../images/icon/diqu.png"></image>
-				<text>线上</text>
-			</view>
-			<view class="diqu" wx:if="{{ item.hold_mode == 2 }}">
-				<image src="../../images/icon/diqu.png"></image>
-				<text>{{ item.city }}  {{ item.address }}</text>
-			</view>
+<view class="pro" wx:if="{{ !no }}">
+	<view class="product-box clearfix" wx:for="{{ list_data }}" wx:key="index" bindtap="goDetail" data-id="{{ item.id }}">
+		<view class="product-imgbox fl">
+			<image mode="aspectFill" src="{{ item.pic }}"></image>
+			<text class="flag">已认证</text>
+		</view>
+		<view class="product-contentbox fr">
+			<text class="title">{{ item.title }}</text>
 			<view class="diqu">
 				<image class="time" src="../../images/icon/date.png"></image>
-				<text>{{ item.end_time }}</text>
+				<text>{{ item.begin_time }}</text>
 			</view>
-			<view class="label">
-				<text wx:if="{{ item.serve_category_id }}">{{ item.serve_category_id }}</text>
-				<text wx:for="{{ item.serve_type }}" wx:key="index">{{ item }}</text>
+			<view class="diqu">
+				<view class="fl">
+					<image src="../../images/icon/wz.png"></image>
+					<text wx:if="{{ item.hold_mode == 1 }}">线上活动</text>
+					<text wx:if="{{ item.hold_mode == 2 }}">{{ item.city }}</text>
+				</view>
+				<view class="fr theme-color">
+					<text wx:if="{{ item.price > 0 }}">{{ item.currency }}{{ item.price }}起</text>
+					<text wx:else>免费</text>
+				</view>
 			</view>
-            <!-- <text class="date">开始时间：{{ item.begin_time }}</text>
-            <text class="date">结束时间：{{ item.end_time }}</text> -->
-            <text class="money" wx:if="{{ item.pay_mode == 1 }}">收费</text>
-            <text class="money" wx:if="{{ item.pay_mode == 2 }}">免费</text>
-        </view>
-    </view>
+
+		</view>
+
+		<view class="label fl">
+			<text wx:if="{{ item.serve_category_id }}">{{ item.serve_category_id }}</text>
+			<text wx:for="{{ item.serve_type }}" wx:key="index">{{ item }}</text>
+		</view>
+	</view>
 </view>
+<view class="no" wx:if="{{ no }}">没有符此条件的活动</view>
 <!-- 产品 E -->

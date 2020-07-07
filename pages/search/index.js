@@ -13,6 +13,8 @@ Page({
 		page: 1,
 
 		isSearch: false,
+		type: '',
+		no: false
 	},
 
 	// go
@@ -49,7 +51,9 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-		
+		this.setData({
+			type: options.type
+		})
 	},
 
 	onShow: function () {
@@ -97,6 +101,7 @@ Page({
 				userId: wx.getStorageSync('user_id'),
 				city: wx.getStorageSync('city'),
 				keywords: keywords,
+				type: that.data.type,
 			},
 			success: function (res) {
 				let data = res.data.data.active_list;
