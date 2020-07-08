@@ -10,7 +10,8 @@
 			</view>
 			<view class="fr">
 				<image class="iconfont icon" src="/images/icon/wz.png" />
-				<text>{{ item.city }}</text>
+					<text wx:if="{{ item.hold_mode == 1 }}">线上活动</text>
+					<text wx:if="{{ item.hold_mode == 2 }}">{{ item.city }}</text>
 			</view>
 		</view>
 	</view>

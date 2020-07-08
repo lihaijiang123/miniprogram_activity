@@ -22,9 +22,10 @@ Page({
     let that = this;
     let index = e.detail.value;
 
-    let newData = that.mergeJsonObject(that.data.data, { industry: that.data.array[index] });
+
+    var industry = 'data.industry';
     that.setData({
-      data: newData
+      [industry]: that.data.array[index]
     })
 
     if (that.data.array[index] == "其他") {
