@@ -9,7 +9,7 @@
 	</view>
 
 	<view class="p">
-		<text space="emsp">浏览：{{ detail_data.see_num }} 收藏：{{ detail_data.cang_num }} 想参加: {{ detail_data.join_num }} 已参加: {{ detail_data.sign_num }}</text>
+		<text space="emsp">浏览：{{ detail_data.see_num }} 收藏：{{ detail_data.cang_num }} 想参加\已参加: {{ detail_data.join_num }} 报名: {{ detail_data.sign_num }}</text>
 	</view>
 
 	<view class="money" wx:if="{{ pay_mode == 1 }}">

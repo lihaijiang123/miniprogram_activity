@@ -39,13 +39,19 @@ Page({
 
 		switch (type) {
 			case 'collection_list':
-				wx.setNavigationBarTitle({title: '我的收藏'})
+				wx.setNavigationBarTitle({
+					title: '我的收藏'
+				})
 				break;
 			case 'share_list':
-				wx.setNavigationBarTitle({title: '我的分享'})
+				wx.setNavigationBarTitle({
+					title: '我的分享'
+				})
 				break;
 			case 'join_list':
-				wx.setNavigationBarTitle({title: '想参加'})
+				wx.setNavigationBarTitle({
+					title: '想参加'
+				})
 				break;
 		}
 
@@ -64,7 +70,7 @@ Page({
 				that.setData({
 					no: true,
 				})
-			}else {
+			} else {
 				let data = JSON.parse(options.data);
 				data.forEach(item => {
 					item.serve_type = item.serve_type.split(',')
@@ -75,7 +81,7 @@ Page({
 					no: false,
 				})
 			}
-		}else {
+		} else {
 			wx.request({
 				url: url + '/activity',
 				data: {
@@ -85,14 +91,10 @@ Page({
 				success: function (res) {
 					console.log(res);
 					if (res.data.data.data.length <= 0) {
-						wx.showToast({
-							title: '已加载全部',
-							icon: 'none'
-						})
 						that.setData({
 							no: true,
 						})
-					}else {
+					} else {
 						let data = res.data.data.data;
 						data.forEach(item => {
 							item.serve_type = item.serve_type.split(',')
@@ -159,13 +161,7 @@ Page({
 					page: page,
 				},
 				success: function (res) {
-					console.log(res);
-					if (res.data.data.active_list.data.length <= 0) {
-						wx.showToast({
-							title: '已加载全部',
-							icon: 'none'
-						})
-					} else {
+					if (res.data.data.active_list.data.length > 0) {
 						let data = that.data.list_data;
 						res.data.data.active_list.data.forEach(item => {
 							item.serve_type = item.serve_type.split(',')
@@ -178,7 +174,7 @@ Page({
 					}
 				}
 			})
-		}else {
+		} else {
 			wx.request({
 				url: url + '/activity',
 				data: {

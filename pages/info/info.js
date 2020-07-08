@@ -84,17 +84,19 @@ Page({
       })
     }
 
+    let serve_id = that.data.serve_id == undefined ? 0 : that.data.serve_id;
+    
     // post
     wx.request({
       url: url + '/info',
       data: {
         userId: wx.getStorageSync('user_id'),
         data: data,
-        serve_id: that.data.serve_id
+        serve_id: serve_id
       },
       success: function (res) {
         wx.showToast({
-          title: '报名成功',
+          title: res.data.msg,
         })
       }
     })

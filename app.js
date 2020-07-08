@@ -43,6 +43,6 @@ App({
 		defaultCity: '',
 		defaultCounty: '',
 
-		dev_api: 'http://www.3sworld.com',
+		dev_api: 'https://www.3sworld.com',
     }
 })

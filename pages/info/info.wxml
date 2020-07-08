@@ -21,6 +21,6 @@
 	</van-cell-group>
 
 	<view class="container submit_btn">
-		<van-button formType="submit" round color="#87CEFA" block>报 名</van-button>
+		<van-button formType="submit" round color="#87CEFA" block>提 交</van-button>
 	</view>
 </form>

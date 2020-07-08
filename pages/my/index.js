@@ -28,7 +28,13 @@ Page({
 		wx.navigateTo({
 			url: '/pages/list/index?type=' + url,
 		})
-	},
+    },
+    
+    info: function() {
+        wx.navigateTo({
+			url: '/pages/info/info'
+		})
+    },
 
     /**
      * 生命周期函数--监听页面加载

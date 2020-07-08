@@ -31,5 +31,10 @@
 		</view>
 	</view>
 </view>
-<view class="no" wx:if="{{ no }}">已加载全部</view>
+<view class="no" wx:if="{{ no }}">
+		<view class="emptybox">
+				<image class="emptyimg" src="../../images/icon/empty.png"></image>
+				<text>暂无相关内容</text>
+		</view>
+</view>
 <!-- 产品 E -->
