@@ -2,6 +2,7 @@
 .container_ {
   padding-top: 20rpx;
   box-shadow: whitesmoke;
+  padding-bottom: 120rpx;
 }
 
 .organize_top {

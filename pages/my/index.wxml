@@ -39,6 +39,10 @@
             <image class='lefts fl' src='../../images/icon/love.png' style="width:34rpx;height:34rpx;"></image>
             <view class='dingdan fl'>想参加\已参加</view>
         </view>
+        <view class='tabs clearfix' bindtap="myOrganizes">
+            <image class='lefts fl' src='../../images/icon/love.png' style="width:34rpx;height:34rpx;"></image>
+            <view class='dingdan fl'>关注的主办方</view>
+        </view>
         <view class='tabs clearfix' bindtap="help">
             <image class='lefts fl' src='../../images/icon/phone.png' style="width:34rpx;height:34rpx;"></image>
             <view class='dingdan fl'>客服与帮助</view>

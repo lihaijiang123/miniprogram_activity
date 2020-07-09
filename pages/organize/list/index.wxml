@@ -1,20 +1,24 @@
-<view class="card" wx:for="{{list}}" wx:key="index" data-id="{{ item.id }}" bindtap="goDetail">
+<view class="container_">
 
-	<image src="{{ item.pic }}"></image>
-	<view class="card_font">
-		<text class="title">{{item.title}}</text>
-		<view class="other">
-			<view class="fl">
-				<image class="iconfont icon" src="/images/icon/date.png" />
-				<text>{{ item.begin_time }}</text>
-			</view>
-			<view class="fr">
-				<image class="iconfont icon" src="/images/icon/wz.png" />
+	<view class="card" wx:for="{{list}}" wx:key="index" data-id="{{ item.id }}" bindtap="goDetail">
+
+		<image src="{{ item.pic }}"></image>
+		<view class="card_font">
+			<text class="title">{{item.title}}</text>
+			<view class="other">
+				<view class="fl">
+					<image class="iconfont icon" src="/images/icon/date.png" />
+					<text>{{ item.begin_time }}</text>
+				</view>
+				<view class="fr">
+					<image class="iconfont icon" src="/images/icon/wz.png" />
 					<text wx:if="{{ item.hold_mode == 1 }}">线上活动</text>
 					<text wx:if="{{ item.hold_mode == 2 }}">{{ item.city }}</text>
+				</view>
 			</view>
 		</view>
 	</view>
+
 </view>
 
 

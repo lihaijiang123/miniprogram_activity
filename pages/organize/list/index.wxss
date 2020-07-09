@@ -2,6 +2,10 @@ page{
   background-color: rgb(245, 245, 245);
 }
 
+.container_ {
+  padding-bottom: 120rpx;
+}
+
 .card{
   background-color: #fff;
   box-shadow: darkgrey;

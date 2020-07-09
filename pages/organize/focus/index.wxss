@@ -1,0 +1,44 @@
+.container{
+  margin-top: 30rpx;
+}
+
+.organize-box{
+  clear: both;
+}
+
+
+.organize_container{
+  width: 530rpx;
+  margin: 0 0 0 50rpx;
+  padding: 5rpx 10rpx 18rpx 0;
+  border-bottom: 1px solid rgb(223, 223, 223);
+}
+
+.organize_container .organize_name{
+  font-size: 34rpx;
+  color: #000;
+  font-weight: 700;
+}
+
+
+.organize_container .organize_desc{
+  font-size: 28rpx;
+  line-height: 54rpx;
+  color: rgb(136, 136, 136);
+  display:block;
+  overflow:hidden;
+  word-break:keep-all;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+
+.organize_container .organize_other{
+  font-size: 24rpx;
+  line-height: 45rpx;
+  color: rgb(136, 136, 136);
+}
+
+.organize_container .organize_other text{
+  margin-right: 40rpx;
+}

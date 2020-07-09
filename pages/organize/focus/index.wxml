@@ -1,0 +1,25 @@
+<view class="container" wx:if="{{ !no }}">
+	<view class="organize-box" wx:for="{{ list }}" wx:key="index" data-id="{{ item.id }}" data-name="{{ item.name }}" bindtap="goOrangize">
+		<view class="fl">
+			<van-image width="100rpx" height="100rpx" round lazy-load src="{{ item.pic }}" />
+		</view>
+		<view class="fr organize_container">
+			<view class="organize_name">
+				<text>{{ item.name }}</text>
+			</view>
+			<view class="organize_desc">
+				<text>{{ item.desc }}</text>
+			</view>
+			<view class="organize_other">
+				<text>粉丝 {{ item.fans }}</text> <text>活动 {{ item.serve_num }}</text>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="no" wx:if="{{ no }}">
+	<view class="emptybox">
+		<image class="emptyimg" src="../../../images/icon/empty.png"></image>
+		<text>暂无相关内容</text>
+	</view>
+</view>

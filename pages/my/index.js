@@ -29,6 +29,13 @@ Page({
 			url: '/pages/list/index?type=' + url,
 		})
     },
+
+    // organize
+    myOrganizes: function() {
+        wx.navigateTo({
+            url: '/pages/organize/focus/index',
+          });
+    },
     
     info: function() {
         wx.navigateTo({
