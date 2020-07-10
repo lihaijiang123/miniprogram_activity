@@ -86,20 +86,55 @@ Page({
 
     let serve_id = that.data.serve_id == undefined ? 0 : that.data.serve_id;
     
-    // post
-    wx.request({
-      url: url + '/info',
-      data: {
-        userId: wx.getStorageSync('user_id'),
-        data: data,
-        serve_id: serve_id
-      },
-      success: function (res) {
-        wx.showToast({
-          title: res.data.msg,
-        })
-      }
-    })
+    if (serve_id != 0) {
+      wx.requestSubscribeMessage({
+        tmplIds: ['bQOHAyqzvoId0mF37tIz7bvKcUZdIZ8ux4LfwIo8dNs'],
+        complete (res) {
+          // post
+          wx.request({
+            url: url + '/info',
+            data: {
+              userId: wx.getStorageSync('user_id'),
+              data: data,
+              serve_id: serve_id
+            },
+            success: function (res) {
+              wx.showToast({
+                title: res.data.msg,
+              })
+
+              setTimeout(function () {
+                wx.navigateBack({
+                  delta: 1
+                });
+              }, 1000)
+            }
+          })
+        }
+      })
+    } else {
+      // post
+      wx.request({
+        url: url + '/info',
+        data: {
+          userId: wx.getStorageSync('user_id'),
+          data: data,
+          serve_id: serve_id
+        },
+        success: function (res) {
+          wx.showToast({
+            title: res.data.msg,
+          })
+
+          setTimeout(function () {
+            wx.navigateBack({
+              delta: 1
+            });
+          }, 1000)
+        }
+      })
+    }
+    
   },
 
   // mergen 
