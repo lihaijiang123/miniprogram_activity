@@ -24,9 +24,15 @@
     <view class="my_fixed">
 
         <view class='tabs clearfix' bindtap="info">
-            <image class='lefts fl' src='../../images/icon/fx.png' style="width:34rpx;height:34rpx;"></image>
+            <image class='lefts fl' src='../../images/icon/my.png' style="width:34rpx;height:34rpx;"></image>
             <view class='dingdan fl'>个人信息</view>
         </view>
+
+        <view class='tabs clearfix' bindtap="goList"  data-url="sign_list">
+            <image class='lefts fl' src='../../images/icon/sign.png' style="width:34rpx;height:34rpx;"></image>
+            <view class='dingdan fl'>我的报名</view>
+        </view>
+
         <view class='tabs clearfix' bindtap="goList" data-url="share_list">
             <image class='lefts fl' src='../../images/icon/fx.png' style="width:34rpx;height:34rpx;"></image>
             <view class='dingdan fl'>我的分享</view>
@@ -40,7 +46,7 @@
             <view class='dingdan fl'>想参加\已参加</view>
         </view>
         <view class='tabs clearfix' bindtap="myOrganizes">
-            <image class='lefts fl' src='../../images/icon/love.png' style="width:34rpx;height:34rpx;"></image>
+            <image class='lefts fl' src='../../images/icon/organize.png' style="width:34rpx;height:34rpx;"></image>
             <view class='dingdan fl'>关注的主办方</view>
         </view>
         <view class='tabs clearfix' bindtap="help">

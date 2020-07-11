@@ -7,7 +7,9 @@ Page({
 	 */
 	data: {
 		detail_data: {},
-		id: ''
+		id: '',
+		isSign: false,
+		isClose: false
 	},
 
 	// goHome
@@ -157,7 +159,9 @@ Page({
 				}
 				that.setData({
 					detail_data: res.data.data,
-					organize_id: res.data.data.organize_id
+					organize_id: res.data.data.organize_id,
+					isSign: res.data.data.isSign,
+					isClose: res.data.data.isClose
 				})
 			}
 		})
@@ -179,11 +183,32 @@ Page({
 		})
 	},
 
-
+	// 报名
 	submit: function () {
 		let that = this;
 		wx.navigateTo({
 			url: '/pages/info/info?id=' + that.data.id
+		})
+	},
+
+	// 取消报名
+	cancel: function(){
+		var that = this;
+		let url = app.globalData.dev_api;
+		wx.request({
+			url: url + '/cancel',
+			data: {
+				userId: wx.getStorageSync('user_id'),
+				serve_id: that.data.id,
+			},
+			success: function (res) {
+				wx.showToast({
+					title: '已取消',
+				})
+				that.setData({
+					isSign: false
+				})
+			}
 		})
 	},
 

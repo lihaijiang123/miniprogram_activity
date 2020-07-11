@@ -70,7 +70,8 @@
 	<view class="product-box clearfix" wx:for="{{ list_data.active_list }}" wx:key="index" bindtap="goDetail" data-id="{{ item.id }}">
 		<view class="product-imgbox fl">
 			<image mode="aspectFill" src="{{ item.pic }}"></image>
-			<text class="flag">已认证</text>
+			<text wx:if="{{ item.loading }}" class="flag">进行中</text>
+			<text wx:else class="flag">已结束</text>
 		</view>
 		<view class="product-contentbox fr">
 			<text class="title">{{ item.title }}</text>

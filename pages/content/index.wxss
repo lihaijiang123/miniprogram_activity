@@ -159,8 +159,12 @@
     text-align: center;
     line-height: 80rpx;
     font-size: 36rpx;
-    border-radius: 30rpx;
+    border-radius: 40rpx;
     color: #fff;
+}
+
+.yibaoming {
+    background-color: #cfcfcf;
 }
 
 .bottom .home .on {

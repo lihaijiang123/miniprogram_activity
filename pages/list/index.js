@@ -53,6 +53,11 @@ Page({
 					title: '想参加'
 				})
 				break;
+			case 'sign_list':
+				wx.setNavigationBarTitle({
+					title: '我的报名'
+				})
+				break;
 		}
 
 

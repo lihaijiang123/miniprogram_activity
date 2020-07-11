@@ -90,7 +90,7 @@ Page({
                 serve_type_id: that.data.type_id
             },
             success: function (res) {
-                console.log(res)
+                // console.log(res)
                 if (res.data.code == -2) {
                     app.getOpenid().then(res => {
                         that.pageInit();

@@ -9,7 +9,7 @@
 	</view>
 
 	<view class="p">
-		<text space="emsp">浏览：{{ detail_data.see_num }} 收藏：{{ detail_data.cang_num }} 想参加\已参加: {{ detail_data.join_num }} 报名: {{ detail_data.sign_num }}</text>
+		<text space="emsp">浏览：{{ detail_data.see_num }} 收藏：{{ detail_data.cang_num }} 想参加\已参加: {{ detail_data.join_num }} <!--报名: {{ detail_data.sign_num }}--></text>
 	</view>
 
 	<view class="money" wx:if="{{ pay_mode == 1 }}">
@@ -159,7 +159,9 @@
 		<text>分享</text>
 	</button>
 
-	<button bindtap="submit" class="baoming fr">报 名</button>
-
+	<button wx:if="{{ isClose }}" class="baoming yibaoming fr">已截止报名</button>
+	<button wx:elif="{{ isSign }}" bindtap="cancel" class="baoming yibaoming fr">已报名</button>
+	<button wx:else bindtap="submit" class="baoming fr">报名</button>
+	
 </view>
 <view class="bottom-box"></view>
