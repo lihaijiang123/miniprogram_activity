@@ -238,16 +238,6 @@ scroll-view.headscroll view.active {
     margin-top: 10rpx;
 }
 
-
-.no {
-    text-align: center;
-    font-size: 36rpx;
-    color: #eee;
-    margin: 40rpx auto;
-
-}
-
-
 .theme-color,
 .theme-color text {
     color: #87CEFA !important;

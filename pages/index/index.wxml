@@ -50,6 +50,10 @@
             </view>
         </view>
     </view>
-    <view class="no" wx:if="{{ no }}">没有更多数据</view>
+    
+    <view wx:if="{{ no }}" class="emptybox">
+            <image class="emptyimg" src="../../images/icon/empty.png"></image>
+            <text>暂无相关内容</text>
+    </view>
     <!-- 热门活动 E -->
 </view>

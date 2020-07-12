@@ -96,11 +96,3 @@ swiper image {
 .hot_activity .content .box .begin_time {
     float: right;
 }
-
-.no {
-	text-align: center;
-	font-size: 40rpx;
-	font-weight: bold;
-	color: #87CEFA;
-	margin: 40rpx auto;
-}

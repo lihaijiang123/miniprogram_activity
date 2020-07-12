@@ -65,17 +65,17 @@
 			</view>
 
 			<view class='company_operation'>
-					<van-row>
-						<van-col span="12">
-								
-							<van-button wx:if="{{ detail_data.attention }}" bindtap="attention" custom-class="company_button" round plain icon="star-o" size="small" type="primary">已关注</van-button>
-							<van-button wx:else custom-class="company_button" bindtap="attention"  round plain icon="star-o" size="small" type="primary">关注</van-button>
+				<van-row>
+					<van-col span="12">
 
-						</van-col>
-						<van-col span="12">
-							<van-button bind:click="organize" custom-class="company_button" round plain size="small" type="primary">主办方小站</van-button>
-						</van-col>
-					</van-row>
+						<van-button wx:if="{{ detail_data.attention }}" bindtap="attention" custom-class="company_button" round plain icon="star-o" size="small" type="primary">已关注</van-button>
+						<van-button wx:else custom-class="company_button" bindtap="attention" round plain icon="star-o" size="small" type="primary">关注</van-button>
+
+					</van-col>
+					<van-col span="12">
+						<van-button bind:click="organize" custom-class="company_button" round plain size="small" type="primary">主办方小站</van-button>
+					</van-col>
+				</van-row>
 			</view>
 		</view>
 
@@ -160,8 +160,11 @@
 	</button>
 
 	<button wx:if="{{ isClose }}" class="baoming yibaoming fr">已截止报名</button>
-	<button wx:elif="{{ isSign }}" bindtap="cancel" class="baoming yibaoming fr">已报名</button>
+	<button wx:elif="{{ isSign }}" bindtap="cancelConfirm" class="baoming yibaoming fr">已报名</button>
 	<button wx:else bindtap="submit" class="baoming fr">报名</button>
-	
 </view>
+
+<van-dialog close-on-click-overlay title="是否取消报名" show="{{ show }}" show-cancel-button bind:confirm="cancel" />
+
+
 <view class="bottom-box"></view>

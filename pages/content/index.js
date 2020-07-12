@@ -9,13 +9,20 @@ Page({
 		detail_data: {},
 		id: '',
 		isSign: false,
-		isClose: false
+		isClose: false,
+		show: false
 	},
 
 	// goHome
 	goHome: function () {
 		wx.switchTab({
 			url: '/pages/index/index'
+		})
+	},
+
+	cancelConfirm: function() {
+		this.setData({
+			show: true
 		})
 	},
 

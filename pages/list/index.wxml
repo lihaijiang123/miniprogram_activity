@@ -31,10 +31,8 @@
 		</view>
 	</view>
 </view>
-<view class="no" wx:if="{{ no }}">
-		<view class="emptybox">
-				<image class="emptyimg" src="../../images/icon/empty.png"></image>
-				<text>暂无相关内容</text>
-		</view>
+<view wx:if="{{ no }}" class="emptybox">
+		<image class="emptyimg" src="../../images/icon/empty.png"></image>
+		<text>暂无相关内容</text>
 </view>
 <!-- 产品 E -->

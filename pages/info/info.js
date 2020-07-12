@@ -53,19 +53,27 @@ Page({
     let error = {};
 
     if (data.name.length == 0) {
-      error = that.mergeJsonObject(error, { name: '请输入姓名' });
+      error = that.mergeJsonObject(error, {
+        name: '请输入姓名'
+      });
       flag = false;
     }
     if (!(/^1[3456789]\d{9}$/.test(data.phone))) {
-      error = that.mergeJsonObject(error, { phone: '请输入正确手机号' });
+      error = that.mergeJsonObject(error, {
+        phone: '请输入正确手机号'
+      });
       flag = false;
     }
     if (!(/^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/.test(data.email))) {
-      error = that.mergeJsonObject(error, { email: '请输入正确的邮箱' });
+      error = that.mergeJsonObject(error, {
+        email: '请输入正确的邮箱'
+      });
       flag = false;
     }
     if (that.data.display == 'block' && data.industry_other.length == 0) {
-      error = that.mergeJsonObject(error, { industry: '如没有可选项请手动输入' });
+      error = that.mergeJsonObject(error, {
+        industry: '如没有可选项请手动输入'
+      });
       flag = false;
     }
 
@@ -85,11 +93,11 @@ Page({
     }
 
     let serve_id = that.data.serve_id == undefined ? 0 : that.data.serve_id;
-    
+
     if (serve_id != 0) {
       wx.requestSubscribeMessage({
         tmplIds: ['bQOHAyqzvoId0mF37tIz7bvKcUZdIZ8ux4LfwIo8dNs'],
-        complete (res) {
+        complete(res) {
           // post
           wx.request({
             url: url + '/info',
@@ -104,6 +112,12 @@ Page({
               })
 
               setTimeout(function () {
+                let pages = getCurrentPages();
+                let prevPage = pages[pages.length - 2];
+                prevPage.setData({
+                  isSign: true
+                })
+
                 wx.navigateBack({
                   delta: 1
                 });
@@ -134,7 +148,7 @@ Page({
         }
       })
     }
-    
+
   },
 
   // mergen 
@@ -165,13 +179,13 @@ Page({
         serve_id: options.id
       },
       success: function (res) {
-        if(!res.data.data.info.isNull) {
+        if (!res.data.data.info.isNull) {
           if (res.data.data.industry.indexOf(res.data.data.info.industry) < 0) {
             res.data.data.info.industry_other = res.data.data.info.industry;
             res.data.data.info.industry = res.data.data.industry[res.data.data.industry.length - 1];
             that.setData({
               display: 'block'
-            })  
+            })
           }
 
         }
