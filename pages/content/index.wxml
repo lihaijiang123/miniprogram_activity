@@ -164,7 +164,7 @@
 	<button wx:else bindtap="submit" class="baoming fr">报名</button>
 </view>
 
-<van-dialog close-on-click-overlay title="是否取消报名" show="{{ show }}" show-cancel-button bind:confirm="cancel" />
+<van-dialog close-on-click-overlay message="是否取消报名" show="{{ show }}" show-cancel-button bind:confirm="cancel" />
 
 
 <view class="bottom-box"></view>
