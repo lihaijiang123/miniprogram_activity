@@ -1,5 +1,6 @@
 {
 	"pages": [
+		"pages/maintenance/index",
 		"pages/index/index",
 		"pages/all_activity/index",
 		"pages/my/index",
