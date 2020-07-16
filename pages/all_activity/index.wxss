@@ -12,3 +12,7 @@
   font-size: 24rpx;
   color: #3b3d3f;
 }
+
+.emptybox{
+  margin-top:220px;
+}

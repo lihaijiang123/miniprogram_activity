@@ -66,6 +66,9 @@ Page({
 	change: function ({ detail }) {
 		let url = app.globalData.dev_api;
 		let that = this;
+		this.setData({
+			no: false
+		})
 		wx.request({
 			url: url + '/test',
 			data: {
@@ -76,17 +79,22 @@ Page({
 			},
 			success: function (res) {
 				let data = res.data.data;
-				data.active_list.forEach(item => {
-					item.serve_type = item.serve_type.split(',')
-				})
-				that.setData({
-					list_data: data,
-					value: detail,
-					page: 1,
-				typeClickId: -1,
-				categoryClickId: -1
-
-				})
+				if (data.active_list.length > 0) {
+					data.active_list.forEach(item => {
+						item.serve_type = item.serve_type.split(',')
+					})
+					that.setData({
+						list_data: data,
+						value: detail,
+						page: 1,
+						typeClickId: -1,
+						categoryClickId: -1
+					})
+				} else {
+					that.setData({
+						no: true
+					})
+				}
 
 				that.gotop()
 			}
@@ -100,6 +108,10 @@ Page({
 		let url = app.globalData.dev_api;
 		let flag = event.currentTarget.dataset.flag;
 		let id = event.currentTarget.dataset.id;
+
+		this.setData({
+			no: false
+		})
 
 		if (flag == 'category' && id != that.data.categoryClickId) {
 			this.setData({
@@ -129,16 +141,20 @@ Page({
 			},
 			success: function (res) {
 				let data = res.data.data;
-				data.active_list.forEach(item => {
-					item.serve_type = item.serve_type.split(',')
-				})
-				that.setData({
-					list_data: data,
-					value: detail,
-				})
-
+				if (data.active_list.length > 0) {
+					data.active_list.forEach(item => {
+						item.serve_type = item.serve_type.split(',')
+					})
+					that.setData({
+						list_data: data,
+						value: detail,
+					})
+				} else {
+					that.setData({
+						no: true,
+					})
+				}
 				that.gotop()
-
 			}
 		})
 	},
@@ -274,7 +290,7 @@ Page({
 		this.selectComponent('#item1').toggle(false);
 		this.selectComponent('#item2').toggle(false);
 		this.selectComponent('#item3').toggle(false);
-		
+
 		this.selectComponent('#item').toggle(false);
 	},
 

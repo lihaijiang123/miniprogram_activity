@@ -99,5 +99,9 @@
 		</view>
 	</view>
 </view>
-<view class="no" wx:if="{{ no }}">没有符此条件的活动</view>
+
+<view wx:if="{{ no }}" class="emptybox">
+	<image class="emptyimg" src="../../images/icon/empty.png"></image>
+	<text>没有符此条件的活动</text>
+</view>
 <!-- 产品 E -->
