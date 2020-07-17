@@ -41,7 +41,7 @@ swiper image {
 }
 
 .hot_activity .content {
-    width: 686rpx;
+    width: 690rpx;
     margin: 0 auto;
 }
 
@@ -50,7 +50,7 @@ swiper image {
     margin-right: 10rpx;
     margin-bottom: 20rpx;
     background-color: #fff;
-    border: 1px solid #dddddd;
+    border: 2rpx solid #dddddd;
     box-sizing: border-box;
     border-radius: 7rpx;
 }

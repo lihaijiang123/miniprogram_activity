@@ -126,10 +126,10 @@
 	</view>
 
 	<view class="content">
-		<view class="body">
-			<van-button type="primary" wx:if="{{ detail_data.join }}" bindtap="wantJoin" color="linear-gradient(to right, #4bb0ff, #6149f6)" block>想参加\已参加</van-button>
+		<view class="body want_box">
+			<van-button type="primary" custom-style="margin: 0 auto;" round wx:if="{{ detail_data.join }}" icon="checked" bindtap="wantJoin" color="#87CEFA">已参加\想参加</van-button>
 
-			<van-button type="primary" wx:else bindtap="wantJoin" color="linear-gradient(to right, #4bb0ff, #6149f6)" block>想参加\已参加</van-button>
+			<van-button plain type="primary" round wx:else bindtap="wantJoin" color="#87CEFA">想参加\已参加</van-button>
 		</view>
 	</view>
 

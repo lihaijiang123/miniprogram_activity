@@ -40,11 +40,11 @@ Page({
 				let data = that.data.detail_data;
 				if (data.join) {
 					wx.showToast({
-						title: '不想参加',
+						title: '已取消',
 					})
 				} else {
 					wx.showToast({
-						title: '想参加',
+						title: '已选想参加',
 					})
 				}
 				data.join = !data.join;

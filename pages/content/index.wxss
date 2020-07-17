@@ -270,3 +270,8 @@
     font-size: 22rpx;
     padding: 10rpx 0;
 }
+
+
+.want_box{
+    text-align: center;
+}
