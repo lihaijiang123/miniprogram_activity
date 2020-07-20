@@ -16,3 +16,7 @@
 .emptybox{
   margin-top:220px;
 }
+
+.van-row {
+  margin-bottom: 5rpx;
+}

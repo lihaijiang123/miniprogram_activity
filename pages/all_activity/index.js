@@ -25,7 +25,7 @@ Page({
 
 		categoryClickId: -1,
 		typeClickId: -1,
-
+		wayClickId: -1,
 
 		// title
 		title1: '时间',
@@ -88,7 +88,8 @@ Page({
 						value: detail,
 						page: 1,
 						typeClickId: -1,
-						categoryClickId: -1
+						categoryClickId: -1,
+						wayClickId: -1
 					})
 				} else {
 					that.setData({
@@ -116,13 +117,23 @@ Page({
 		if (flag == 'category' && id != that.data.categoryClickId) {
 			this.setData({
 				categoryClickId: id,
-				typeClickId: -1
+				typeClickId: -1,
+				wayClickId: -1
 			})
 		}
 
 		if (flag == 'type' && id != that.data.typeClickId) {
 			this.setData({
 				typeClickId: id,
+				categoryClickId: -1,
+				wayClickId: -1
+			})
+		}
+
+		if (flag == 'way' && id != that.data.wayClickId) {
+			this.setData({
+				wayClickId: id,
+				typeClickId: -1,
 				categoryClickId: -1
 			})
 		}
@@ -146,6 +157,7 @@ Page({
 						item.serve_type = item.serve_type.split(',')
 					})
 					that.setData({
+						page: 1,
 						list_data: data,
 						value: detail,
 					})

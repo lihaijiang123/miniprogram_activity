@@ -19,12 +19,52 @@
 		<van-dropdown-item bind:change="change" id="item2" title="{{ title2 }}" value="{{ value }}" options="{{ option2 }}" />
 		<van-dropdown-item bind:change="change" id="item3" title="{{ title3 }}" value="{{ value }}" options="{{ option3 }}" />
 		<van-dropdown-item title="{{ title4 }}" id="item">
+
+			<van-row>
+				<text class="dropdown-title">举办方式</text>
+			</van-row>
+
+			<van-row custom-class="van-row">
+				<van-col custom-class="dropdown-col" span="6">
+
+					<block wx:if="{{1==wayClickId}}">
+						<van-button bind:click="dropdownClick" data-flag="way" data-id="1" custom-class="dropdown-btn" hairline color="#87CEFA" size="small">全部</van-button>
+					</block>
+					<block wx:else>
+						<van-button bind:click="dropdownClick" data-flag="way" data-id="1" custom-class="dropdown-btn" plain hairline color="#87CEFA" size="small">全部</van-button>
+					</block>
+
+				</van-col>
+				<van-col custom-class="dropdown-col" span="6">
+					
+					<block wx:if="{{2==wayClickId}}">
+						<van-button bind:click="dropdownClick" data-flag="way" data-id="2" custom-class="dropdown-btn" hairline color="#87CEFA" size="small">线上</van-button>
+					</block>
+					<block wx:else>
+						<van-button bind:click="dropdownClick" data-flag="way" data-id="2" custom-class="dropdown-btn" plain hairline color="#87CEFA" size="small">线上</van-button>
+					</block>
+
+				</van-col>
+				<van-col custom-class="dropdown-col" span="6">
+					
+					<block wx:if="{{3==wayClickId}}">
+						<van-button bind:click="dropdownClick" data-flag="way" data-id="3" custom-class="dropdown-btn" hairline color="#87CEFA" size="small">线下</van-button>
+					</block>
+					<block wx:else>
+						<van-button bind:click="dropdownClick" data-flag="way" data-id="3" custom-class="dropdown-btn" plain hairline color="#87CEFA" size="small">线下</van-button>
+					</block>
+
+				</van-col>
+			</van-row>
+
+			<van-divider />
+
 			<van-row>
 				<text class="dropdown-title">关键词</text>
 			</van-row>
-			<van-row>
-				<van-col wx:for="{{ list_data.active_types }}" wx:key="index" custom-class="dropdown-col" span="6">
 
+			<van-row custom-class="van-row">
+				<van-col wx:for="{{ list_data.active_types }}" wx:key="index" custom-class="dropdown-col" span="6">
 
 					<block wx:if="{{item.id==typeClickId}}">
 						<van-button bind:click="dropdownClick" data-flag="type" data-id="{{ item.id }}" custom-class="dropdown-btn" hairline color="#87CEFA" size="small">{{ item.title }}</van-button>
@@ -34,7 +74,6 @@
 						<van-button bind:click="dropdownClick" data-flag="type" data-id="{{ item.id }}" custom-class="dropdown-btn" plain hairline color="#87CEFA" size="small">{{ item.title }}</van-button>
 					</block>
 
-
 				</van-col>
 			</van-row>
 
@@ -43,18 +82,17 @@
 			<van-row>
 				<text class="dropdown-title">活动类别</text>
 			</van-row>
-			<van-row>
+
+			<van-row custom-class="van-row">
 				<van-col wx:for="{{ list_data.active_category }}" wx:key="index" custom-class="dropdown-col" span="6">
 
-
-          <block wx:if="{{item.id==categoryClickId}}">
+					<block wx:if="{{item.id==categoryClickId}}">
 						<van-button bind:click="dropdownClick" data-flag="category" data-id="{{ item.id }}" custom-class="dropdown-btn" hairline color="#87CEFA" size="small">{{ item.title }}</van-button>
 					</block>
 
 					<block wx:else>
 						<van-button bind:click="dropdownClick" data-flag="category" data-id="{{ item.id }}" custom-class="dropdown-btn" plain hairline color="#87CEFA" size="small">{{ item.title }}</van-button>
 					</block>
-
 
 				</van-col>
 			</van-row>
