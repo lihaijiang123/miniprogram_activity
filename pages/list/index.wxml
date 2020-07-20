@@ -16,6 +16,8 @@
 					<image src="../../images/icon/wz.png"></image>
 					<text wx:if="{{ item.hold_mode == 1 }}">线上活动</text>
 					<text wx:if="{{ item.hold_mode == 2 }}">{{ item.city }}</text>
+					<text wx:if="{{ item.hold_mode == 3 }}">{{ item.city }}(含线上)</text>
+
 				</view>
 				<view class="fr theme-color">
 					<text wx:if="{{ item.price > 0 }}">{{ item.currency }}{{ item.price }}起</text>

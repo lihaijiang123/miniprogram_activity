@@ -27,7 +27,7 @@
 	<view class="date_or_text">
 		<image src="../../images/icon/wz.png" class="iconfont"></image>
 		<text wx:if="{{ detail_data.hold_mode == 1 }}">线上</text>
-		<text selectable='true' bindlongtap='copy' data-name="address" wx:if="{{ detail_data.hold_mode == 2 || detail_data.hold_mode == 3 }}">{{ detail_data.city }} {{ detail_data.address }}</text>
+		<text selectable='true' bindlongtap='copy' data-name="address" wx:else>{{ detail_data.city }} {{ detail_data.address }}</text>
 	</view>
 
 	<view class="date_or_text" wx:if="{{ detail_data.url }}">
