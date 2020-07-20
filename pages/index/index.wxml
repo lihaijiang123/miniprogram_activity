@@ -43,6 +43,7 @@
                     <view class="addr">
                         <text class="subtitle fl" wx:if="{{ item.hold_mode == 1 }}">线上活动</text>
                         <text class="subtitle fl" wx:if="{{ item.hold_mode == 2 }}">{{ item.city }}</text>
+                        <text class="subtitle fl" wx:if="{{ item.hold_mode == 3 }}">线上+线下活动</text>
                         <text class="subtitle fr">{{ item.begin_time }}</text>
                     </view>
                 </view>

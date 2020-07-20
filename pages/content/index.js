@@ -10,7 +10,8 @@ Page({
 		id: '',
 		isSign: false,
 		isClose: false,
-		show: false
+		show: false,
+		isOpen: false
 	},
 
 	// goHome
@@ -168,7 +169,8 @@ Page({
 					detail_data: res.data.data,
 					organize_id: res.data.data.organize_id,
 					isSign: res.data.data.isSign,
-					isClose: res.data.data.isClose
+					isClose: res.data.data.isClose,
+					isOpen: res.data.data.open
 				})
 			}
 		})

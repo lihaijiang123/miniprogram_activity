@@ -27,7 +27,7 @@
 	<view class="date_or_text">
 		<image src="../../images/icon/wz.png" class="iconfont"></image>
 		<text wx:if="{{ detail_data.hold_mode == 1 }}">线上</text>
-		<text selectable='true' bindlongtap='copy' data-name="address" wx:if="{{ detail_data.hold_mode == 2 }}">{{ detail_data.city }} {{ detail_data.address }}</text>
+		<text selectable='true' bindlongtap='copy' data-name="address" wx:if="{{ detail_data.hold_mode == 2 || detail_data.hold_mode == 3 }}">{{ detail_data.city }} {{ detail_data.address }}</text>
 	</view>
 
 	<view class="date_or_text" wx:if="{{ detail_data.url }}">
@@ -159,7 +159,8 @@
 		<text>分享</text>
 	</button>
 
-	<button wx:if="{{ isClose }}" class="baoming yibaoming fr">已截止报名</button>
+	<button wx:if="{{ !isOpen }}" class="baoming yibaoming fr">不支持报名</button>
+	<button wx:elif="{{ isClose }}" class="baoming yibaoming fr">已截止报名</button>
 	<button wx:elif="{{ isSign }}" bindtap="cancelConfirm" class="baoming yibaoming fr">已报名</button>
 	<button wx:else bindtap="submit" class="baoming fr">报名</button>
 </view>
